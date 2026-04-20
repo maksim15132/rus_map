@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Карта России - путешествие по регионам</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+   <div class="top-menu">
+        <div class="menu-container">
+            <div class="logo-area">
+                <div class="logo-icon"><img src="LOGOO.png" alt="" class="logo-icon"></div>
+            </div>
+            <div class="menu-title">
+                🚗 Выбери регион и отправляйся в путешествие по самым живописным местам России!
+            </div>
+            <div class="search-area">
+                <input type="text" id="searchInput" class="search-input" placeholder="🔍 Найти регион...">
+                <button id="searchBtn" class="search-btn">Найти</button>
+                <button id="resetBtn" class="reset-btn">Сброс</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="main-layout">
+            <div class="map-wrapper">
+                <div class="header">
+                    <h1>🇷🇺 Российская Федерация</h1>
+                    <p>Интерактивная карта • нажми на любой регион</p>
+                    <div class="new-regions-badge">
+                        ⭐ Крым (82) • ДНР (80) • ЛНР (81)
+                    </div>
+                </div>
+                <div id="map"></div>
+                <div class="footer-container">
+                    <div class="footer">
+                        🖱️ Наведите на регион • Нажмите в списке справа
+                    </div>
+                    <div class="stats">
+                        <span class="stat-badge">🗺️ 89 субъектов РФ</span>
+                        <span class="stat-badge">🎨 Цветные области</span>
+                        <span class="stat-badge">⭐ Новые регионы</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <h3>📋 Регионы России</h3>
+                <div id="regionListContainer" class="region-list"></div>
+                <div class="sidebar-stats">
+                    <p>✅ Всего: <span id="totalCount">0</span> | Показано: <span id="visibleCount">0</span></p>
+                    <p>🖱️ Нажмите на регион — перейти к нему на карту</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-sections">
+            <div class="popular-regions">
+                <h3>🌟 Популярные регионы для путешествий</h3>
+                <div class="popular-grid">
+                    <div class="popular-card" data-region="Республика Крым"><div class="card-icon">🏖️</div><div class="card-name">Крым</div><div class="card-desc">Чёрное море, горы, дворцы</div></div>
+                    <div class="popular-card" data-region="Краснодарский край"><div class="card-icon">⛱️</div><div class="card-name">Краснодарский край</div><div class="card-desc">Сочи, Геленджик, Абрау-Дюрсо</div></div>
+                    <div class="popular-card" data-region="Республика Алтай"><div class="card-icon">🏔️</div><div class="card-name">Алтай</div><div class="card-desc">Горный Алтай, Телецкое озеро</div></div>
+                    <div class="popular-card" data-region="Республика Карелия"><div class="card-icon">🌲</div><div class="card-name">Карелия</div><div class="card-desc">Кижи, Валаам, озёра</div></div>
+                    <div class="popular-card" data-region="Калининградская область"><div class="card-icon">🏰</div><div class="card-name">Калининград</div><div class="card-desc">Куршская коса, готика</div></div>
+                    <div class="popular-card" data-region="Республика Татарстан"><div class="card-icon">🕌</div><div class="card-name">Татарстан</div><div class="card-desc">Казань, Свияжск, Булгар</div></div>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card fact-card"><h4>📊 Интересные факты</h4><ul><li>🇷🇺 Россия — самая большая страна в мире</li><li>🚗 Коды ГИБДД: от 01 до 199</li><li>🏔️ 11 городов-миллионников</li><li>🌊 12 морей омывают берега России</li><li>🗺️ 89 субъектов федерации</li></ul></div>
+                <div class="info-card tip-card"><h4>💡 Совет путешественнику</h4><p>Нажми на любой регион на карте или выбери из списка справа, чтобы открыть страницу с подробной информацией о регионе. Открой для себя удивительные места России!</p><div class="tip-icon">✈️</div></div>
+                <div class="info-card stat-card"><h4>🏆 Самые посещаемые</h4><div class="stat-item">🥇 Москва</div><div class="stat-item">🥈 Санкт-Петербург</div><div class="stat-item">🥉 Краснодарский край</div><div class="stat-item">4️⃣ Республика Крым</div><div class="stat-item">5️⃣ Республика Татарстан</div></div>
+            </div>
+
+            <div class="quote-section"><p>"Умом Россию не понять,Аршином общим не измерить:У ней особенная стать —В Россию можно только верить." — Фёдор Тютчев</p></div>
+        </div>
+    </div>
+
+<script>
+    // ПОЛНЫЙ СПИСОК РЕГИОНОВ С КООРДИНАТАМИ
+    const regionsWithCoords = [
+        { name: "Республика Адыгея", lat: 44.65, lng: 40.12 },
+        { name: "Республика Алтай", lat: 50.95, lng: 86.97 },
+        { name: "Республика Башкортостан", lat: 54.73, lng: 55.97 },
+        { name: "Республика Бурятия", lat: 53.80, lng: 109.33 },
+        { name: "Республика Дагестан", lat: 42.98, lng: 47.50 },
+        { name: "Республика Ингушетия", lat: 43.32, lng: 44.99 },
+        { name: "Кабардино-Балкарская Республика", lat: 43.48, lng: 43.60 },
+        { name: "Республика Калмыкия", lat: 46.57, lng: 45.32 },
+        { name: "Карачаево-Черкесская Республика", lat: 43.77, lng: 41.92 },
+        { name: "Республика Карелия", lat: 63.86, lng: 34.35 },
+        { name: "Республика Коми", lat: 63.86, lng: 54.83 },
+        { name: "Республика Марий Эл", lat: 56.63, lng: 47.90 },
+        { name: "Республика Мордовия", lat: 54.23, lng: 44.07 },
+        { name: "Республика Саха (Якутия)", lat: 66.27, lng: 122.77 },
+        { name: "Республика Северная Осетия - Алания", lat: 43.05, lng: 44.58 },
+        { name: "Республика Татарстан", lat: 55.78, lng: 49.12 },
+        { name: "Республика Тыва", lat: 51.52, lng: 94.88 },
+        { name: "Удмуртская Республика", lat: 56.85, lng: 53.22 },
+        { name: "Республика Хакасия", lat: 53.70, lng: 91.45 },
+        { name: "Чеченская Республика", lat: 43.40, lng: 45.70 },
+        { name: "Чувашская Республика", lat: 55.56, lng: 47.09 },
+        { name: "Республика Крым", lat: 45.00, lng: 34.10 },
+        { name: "Алтайский край", lat: 53.00, lng: 82.00 },
+        { name: "Забайкальский край", lat: 52.00, lng: 113.00 },
+        { name: "Камчатский край", lat: 56.00, lng: 159.00 },
+        { name: "Краснодарский край", lat: 45.37, lng: 39.44 },
+        { name: "Красноярский край", lat: 60.00, lng: 90.00 },
+        { name: "Пермский край", lat: 59.00, lng: 56.00 },
+        { name: "Приморский край", lat: 45.00, lng: 134.00 },
+        { name: "Ставропольский край", lat: 45.00, lng: 43.00 },
+        { name: "Хабаровский край", lat: 50.00, lng: 136.00 },
+        { name: "Амурская область", lat: 53.00, lng: 127.00 },
+        { name: "Архангельская область", lat: 64.00, lng: 40.00 },
+        { name: "Астраханская область", lat: 47.00, lng: 48.00 },
+        { name: "Белгородская область", lat: 50.60, lng: 36.60 },
+        { name: "Брянская область", lat: 53.00, lng: 34.00 },
+        { name: "Владимирская область", lat: 56.13, lng: 40.42 },
+        { name: "Волгоградская область", lat: 49.00, lng: 44.00 },
+        { name: "Вологодская область", lat: 60.00, lng: 40.00 },
+        { name: "Воронежская область", lat: 51.00, lng: 40.00 },
+        { name: "Донецкая Народная Республика", lat: 48.00, lng: 37.80 },
+        { name: "Ивановская область", lat: 57.00, lng: 41.00 },
+        { name: "Иркутская область", lat: 57.00, lng: 104.00 },
+        { name: "Калининградская область", lat: 54.71, lng: 20.51 },
+        { name: "Калужская область", lat: 54.50, lng: 35.50 },
+        { name: "Кемеровская область", lat: 55.00, lng: 86.00 },
+        { name: "Кировская область", lat: 58.00, lng: 49.00 },
+        { name: "Костромская область", lat: 58.00, lng: 43.00 },
+        { name: "Курганская область", lat: 55.00, lng: 64.00 },
+        { name: "Курская область", lat: 51.73, lng: 36.19 },
+        { name: "Ленинградская область", lat: 60.00, lng: 32.00 },
+        { name: "Липецкая область", lat: 52.61, lng: 39.60 },
+        { name: "Луганская Народная Республика", lat: 48.57, lng: 39.33 },
+        { name: "Магаданская область", lat: 62.00, lng: 154.00 },
+        { name: "Московская область", lat: 55.70, lng: 37.80 },
+        { name: "Мурманская область", lat: 68.00, lng: 34.00 },
+        { name: "Нижегородская область", lat: 56.33, lng: 44.00 },
+        { name: "Новгородская область", lat: 58.50, lng: 32.50 },
+        { name: "Новосибирская область", lat: 55.00, lng: 78.00 },
+        { name: "Омская область", lat: 56.00, lng: 73.00 },
+        { name: "Оренбургская область", lat: 52.00, lng: 55.00 },
+        { name: "Орловская область", lat: 52.97, lng: 36.08 },
+        { name: "Пензенская область", lat: 53.00, lng: 44.00 },
+        { name: "Псковская область", lat: 57.32, lng: 29.26 },
+        { name: "Ростовская область", lat: 47.87, lng: 41.19 },
+        { name: "Рязанская область", lat: 54.60, lng: 40.53 },
+        { name: "Самарская область", lat: 53.00, lng: 50.00 },
+        { name: "Саратовская область", lat: 51.79, lng: 46.74 },
+        { name: "Сахалинская область", lat: 50.00, lng: 142.00 },
+        { name: "Свердловская область", lat: 58.70, lng: 61.32 },
+        { name: "Смоленская область", lat: 55.00, lng: 33.00 },
+        { name: "Тамбовская область", lat: 52.72, lng: 41.43 },
+        { name: "Тверская область", lat: 57.00, lng: 35.00 },
+        { name: "Томская область", lat: 58.00, lng: 82.00 },
+        { name: "Тульская область", lat: 54.00, lng: 37.00 },
+        { name: "Тюменская область", lat: 57.00, lng: 69.00 },
+        { name: "Ульяновская область", lat: 53.00, lng: 47.00 },
+        { name: "Челябинская область", lat: 54.00, lng: 60.00 },
+        { name: "Ярославская область", lat: 57.63, lng: 39.87 },
+        { name: "Москва", lat: 55.75, lng: 37.62 },
+        { name: "Санкт-Петербург", lat: 59.93, lng: 30.33 },
+        { name: "Еврейская автономная область", lat: 48.50, lng: 132.00 },
+        { name: "Ненецкий автономный округ", lat: 68.00, lng: 55.00 },
+        { name: "Ханты-Мансийский АО - Югра", lat: 61.00, lng: 70.00 },
+        { name: "Чукотский автономный округ", lat: 66.00, lng: -170.00 },
+        { name: "Ямало-Ненецкий автономный округ", lat: 67.00, lng: 75.00 }
+    ];
+
+    const regionNames = regionsWithCoords.map(r => r.name);
+    
+    function getCoords(regionName) {
+        const found = regionsWithCoords.find(r => r.name === regionName);
+        return found ? [found.lat, found.lng] : [55.0, 60.0];
+    }
+
+    // Функция для преобразования названия в имя файла
+    function getFileName(regionName) {
+        const specialNames = {
+            "Республика Крым": "Республика_Крым.html",
+            "Донецкая Народная Республика": "Донецкая_Народная_Республика.html",
+            "Луганская Народная Республика": "Луганская_Народная_Республика.html",
+            "Москва": "Москва.html",
+            "Санкт-Петербург": "Санкт-Петербург.html",
+            "Краснодарский край": "Краснодарский_край.html",
+            "Красноярский край": "Красноярский_край.html",
+            "Приморский край": "Приморский_край.html",
+            "Ставропольский край": "Ставропольский_край.html",
+            "Хабаровский край": "Хабаровский_край.html",
+            "Алтайский край": "Алтайский_край.html",
+            "Забайкальский край": "Забайкальский_край.html",
+            "Камчатский край": "Камчатский_край.html",
+            "Пермский край": "Пермский_край.html",
+            "Курская область": "Курская_область.html"
+        };
+        
+        if (specialNames[regionName]) {
+            return specialNames[regionName];
+        }
+        return regionName.replace(/\s+/g, '_').replace(/-/g, '_') + '.html';
+    }
+    const REGIONS_FOLDER = 'region/';
+
+    let map;
+    let currentGeoJsonLayer = null;
+    const regionListDiv = document.getElementById('regionListContainer');
+    const totalSpan = document.getElementById('totalCount');
+    const visibleSpan = document.getElementById('visibleCount');
+
+    function renderRegionList(filterText = "") {
+        const filtered = regionNames.filter(r => r.toLowerCase().includes(filterText.toLowerCase()));
+        visibleSpan.innerText = filtered.length;
+        regionListDiv.innerHTML = "";
+        
+        if (filtered.length === 0) {
+            regionListDiv.innerHTML = '<div class="no-results">❌ Регион не найден</div>';
+            return;
+        }
+        
+        filtered.forEach(regionName => {
+            const div = document.createElement('div');
+            div.className = "region-list-item";
+            div.innerHTML = `<span class="region-name">${regionName}</span>`;
+            
+            div.onclick = (function(name) {
+                return function() {
+                    const coords = getCoords(name);
+                    map.setView(coords, 6);
+                    const temp = L.marker(coords).addTo(map);
+                    const fileName = getFileName(name);
+                    const fullPath = REGIONS_FOLDER + fileName;
+                    console.log('Открываю файл:', fullPath);
+                    temp.bindPopup(`<div style="text-align:center"><strong>${name}</strong><br><button class="region-button" onclick="window.location.href='${fullPath}'">🌍 Перейти на сайт региона</button></div>`).openPopup();
+                    setTimeout(() => map.removeLayer(temp), 4000);
+                    document.querySelectorAll('.region-list-item').forEach(el => el.classList.remove('active'));
+                    div.classList.add('active');
+                };
+            })(regionName);
+            
+            regionListDiv.appendChild(div);
+        });
+    }
+
+    map = L.map('map', { attributionControl: false }).setView([62, 95], 4);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '', subdomains: 'abcd', minZoom: 3, maxZoom: 8
+    }).addTo(map);
+
+    fetch('https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/russia.geojson')
+        .then(res => res.json())
+        .then(data => {
+            if (currentGeoJsonLayer) map.removeLayer(currentGeoJsonLayer);
+            currentGeoJsonLayer = L.geoJSON(data, {
+                style: { color: '#ffd966', weight: 1.5, fillColor: '#2c3e50', fillOpacity: 0.85 },
+                onEachFeature: (feature, layer) => {
+                    let name = feature.properties?.name || feature.properties?.NAME || "Регион";
+                    const fileName = getFileName(name);
+                    const fullPath = REGIONS_FOLDER + fileName;
+                    const popupDiv = document.createElement('div');
+                    popupDiv.innerHTML = `<strong>${name}</strong><br><button class="region-button" onclick="window.location.href='${fullPath}'">🌍 Перейти на сайт региона</button>`;
+                    layer.bindPopup(popupDiv);
+                    layer.on('mouseover', () => layer.setStyle({ fillColor: '#3a5a6e', weight: 2.5 }));
+                    layer.on('mouseout', () => currentGeoJsonLayer.resetStyle(layer));
+                }
+            }).addTo(map);
+            map.fitBounds(currentGeoJsonLayer.getBounds());
+            map.setZoom(4);
+        })
+        .catch(() => {
+            regionsWithCoords.forEach(r => {
+                const marker = L.circleMarker([r.lat, r.lng], { radius: 8, fillColor: '#2c3e50', color: '#ffd966' }).addTo(map);
+                const fileName = getFileName(r.name);
+                const fullPath = REGIONS_FOLDER + fileName;
+                marker.bindPopup(`<strong>${r.name}</strong><br><button class="region-button" onclick="window.location.href='${fullPath}'">🌍 Перейти на сайт</button>`);
+            });
+        });
+
+    function addCustomRegions() {
+        const custom = [
+            { name: "Республика Крым", coords: [[45.5,33.0],[45.6,33.8],[45.5,34.5],[45.2,35.0],[44.8,34.8],[44.5,34.2],[44.6,33.5],[44.9,33.0]] },
+            { name: "Донецкая Народная Республика", coords: [[48.3,37.2],[48.4,37.8],[48.2,38.2],[47.9,38.0],[47.8,37.5],[47.9,37.0]] },
+            { name: "Луганская Народная Республика", coords: [[48.9,38.7],[49.0,39.2],[48.7,39.5],[48.4,39.3],[48.3,38.8],[48.5,38.5]] }
+        ];
+        custom.forEach(c => {
+            const poly = L.polygon(c.coords, { color: '#ffd966', weight: 1.5, fillColor: '#2c3e50', fillOpacity: 0.85 }).addTo(map);
+            const fileName = getFileName(c.name);
+            const fullPath = REGIONS_FOLDER + fileName;
+            poly.bindPopup(`<strong>${c.name}</strong><br><button class="region-button" onclick="window.location.href='${fullPath}'">🌍 Перейти на сайт</button>`);
+            poly.on('mouseover', () => poly.setStyle({ fillColor: '#3a5a6e', weight: 2.5 }));
+            poly.on('mouseout', () => poly.setStyle({ fillColor: '#2c3e50', weight: 1.5 }));
+        });
+    }
+    setTimeout(addCustomRegions, 500);
+
+    const searchBtn = document.getElementById('searchBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const searchInput = document.getElementById('searchInput');
+    
+    searchBtn.onclick = () => renderRegionList(searchInput.value);
+    resetBtn.onclick = () => { searchInput.value = ''; renderRegionList(''); };
+    searchInput.onkeyup = (e) => { if (e.key === 'Enter') renderRegionList(searchInput.value); };
+
+    document.querySelectorAll('.popular-card').forEach(card => {
+        card.onclick = () => {
+            const region = card.getAttribute('data-region');
+            const coords = getCoords(region);
+            map.setView(coords, 7);
+            const fileName = getFileName(region);
+            const fullPath = REGIONS_FOLDER + fileName;
+            const temp = L.marker(coords).addTo(map);
+            temp.bindPopup(`<div style="text-align:center"><strong>${region}</strong><br><button class="region-button" onclick="window.location.href='${fullPath}'">🌍 Перейти на сайт региона</button></div>`).openPopup();
+            setTimeout(() => map.removeLayer(temp), 4000);
+        };
+    });
+
+    totalSpan.innerText = regionNames.length;
+    renderRegionList('');
+</script>
+</body>
+</html>
