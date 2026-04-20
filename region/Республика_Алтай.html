@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Алтайский край - Жемчужина Сибири</title>
+    <link rel="stylesheet" href="../region/Курская область/style_region.css">
+</head>
+<body>
+    <div class="welcome-banner">
+        <img src="../img_logo/mockva.png" alt="Герб Алтайского края" class="logo">
+        <h1 class="logo_text">Добро пожаловать в Алтайский край</h1>
+        <button class="back-button" onclick="goBack()">← Назад</button>
+    </div>
+
+    <div class="main-layout">
+        <!-- Первый блок: текст справа, изображения слева (история края) -->
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="../region/Алтайский Край/altai1.jpg" alt="Демидовская площадь в Барнауле" class="slider-image active" id="slider1-img1">
+                    <img src="../region/Алтайский Край/altai2.jpg" alt="Алтайские горы и степи" class="slider-image" id="slider1-img2">
+                    <img src="../region/Алтайский Край/altai3.webp" alt="Современный Барнаул" class="slider-image" id="slider1-img3">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left', -1)">❮</button>
+                    <span class="slider-counter" id="left-counter">1/3</span>
+                    <button class="slider-btn next" onclick="changeImage('left', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>История Алтайского края</h2>
+                <p>Алтайский край — уникальный регион на юге Сибири, который называют "зеленой аптекой" России и "житницей" Сибири. История освоения этих земель началась в XVIII веке, когда по указу Петра I здесь началась добыча серебра и меди. Легендарный уральский промышленник Акинфий Демидов основал в 1730-х годах Колывано-Воскресенские заводы, положившие начало промышленному развитию региона.</p>
+                <p>Сегодня Алтайский край — это субъект Российской Федерации, расположенный на юго-востоке Западной Сибири. В состав региона входят 59 районов, 12 городов, 14 поселков городского типа. Крупнейшие города — Барнаул (административный центр), Бийск, Рубцовск, Новоалтайск, Заринск, Камень-на-Оби. Край славится уникальным сочетанием горных и равнинных ландшафтов, чистейшими реками и озерами, целебными источниками и богатейшим культурным наследием.</p>
+            </div>
+        </div>
+
+        <!-- Второй блок: изображения слева, текст справа (символы и гордость края) -->
+        <div class="content-block reverse">
+            <div class="image-slider right-slider">
+                <div class="slider-container">
+                    <img src="../region/Алтайский Край/altai4.webp" alt="Алтайский мед" class="slider-image active" id="slider2-img1">
+                    <img src="../region/Алтайский Край/altai5.jfif" alt="Обские плесы в Бийске" class="slider-image" id="slider2-img2">
+                    <img src="../region/Алтайский Край/altai6.webp" alt="Алтайский кедр" class="slider-image" id="slider2-img3">
+                    <img src="../region/Алтайский Край/altai7.jpg" alt="Озеро Кучукское" class="slider-image" id="slider2-img4">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('right', -1)">❮</button>
+                    <span class="slider-counter" id="right-counter">1/4</span>
+                    <button class="slider-btn next" onclick="changeImage('right', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content left-text">
+                <h2>Символы и гордость Алтая</h2>
+                <p>Алтайский край славится своими уникальными символами, известными далеко за пределами России. Во-первых, это <strong>алтайский мед</strong> — регион является одним из главных производителей меда в стране. Уникальная природа Алтая позволяет получать более 20 сортов меда, включая знаменитый "горный" и "таежный", которые ценятся за свои целебные свойства. Во-вторых, это <strong>алтайский кедр</strong> — символ сибирской тайги, дающий ценнейшие орехи и древесину.</p>
+                <p>Кроме того, Алтай — это <strong>обские плесы</strong> — живописные участки реки Обь, главной водной артерии региона. Особое место занимают <strong>алтайские соленые озера</strong> — Кулундинское, Кучукское, Яровое, известные своими целебными грязями и минеральной водой. Завершает список символов <strong>алтайский сыр</strong> — регион славится своим сыроделием, которое имеет вековые традиции. Алтайские сыры "Советский", "Алтайский", "Горный" признаны одними из лучших в России.</p>
+            </div>
+        </div>
+
+        <!-- Третий блок: текст справа, изображения слева (природные достопримечательности) -->
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="../region/Алтайский Край/altai8.jpg" alt="Озеро Ая в Алтайском крае" class="slider-image active" id="slider3-img1">
+                    <img src="../region/Алтайский Край/altai9.jpg" alt="Сростки - родина Шукшина" class="slider-image" id="slider3-img2">
+                    <img src="../region/Алтайский Край/altai10.jpg" alt="Денисова пещера" class="slider-image" id="slider3-img3">
+                    <img src="../region/Алтайский Край/altai11.webp" alt="Гора Колывань" class="slider-image" id="slider3-img4">
+                    <img src="../region/Алтайский Край/altai12.jfif" alt="Тигирекский заповедник" class="slider-image" id="slider3-img5">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left2', -1)">❮</button>
+                    <span class="slider-counter" id="left2-counter">1/5</span>
+                    <button class="slider-btn next" onclick="changeImage('left2', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>Природные достопримечательности</h2>
+                <p>Природа Алтайского края поражает своим разнообразием и первозданной красотой. Центральное место среди природных достопримечательностей занимает <strong>озеро Ая</strong> — одно из самых живописных озер региона, расположенное в предгорьях Алтая. Его теплая вода и живописные скалистые берега привлекают тысячи туристов. Уникальным объектом является <strong>Денисова пещера</strong> — всемирно известный археологический памятник, где были обнаружены останки древнего человека — денисовца, жившего здесь более 50 тысяч лет назад.</p>
+                <p>Особого внимания заслуживают <strong>Колыванский хребет</strong> с его гранитными останцами причудливых форм, среди которых выделяется <strong>Колыванский камнерезный завод</strong>, где создаются знаменитые алтайские вазы из яшмы и порфира. <strong>Тигирекский заповедник</strong> хранит уникальные экосистемы горной тайги и лесостепи, здесь обитают редкие виды животных и растений. Живописны <strong>долины рек Песчаной, Ануя и Чарыша</strong>, где расположены многочисленные базы отдыха и туристические стоянки, а также знаменитые <strong>Тавдинские пещеры</strong> — один из крупнейших спелеологических комплексов Сибири.</p>
+            </div>
+        </div>
+
+        <!-- Четвертый блок: изображения слева, текст справа (культурное наследие и известные личности) -->
+        <div class="content-block reverse">
+            <div class="image-slider right-slider">
+                <div class="slider-container">
+                    <img src="../region/Алтайский Край/altai13.webp" alt="Музей Шукшина в Сростках" class="slider-image active" id="slider4-img1">
+                    <img src="../region/Алтайский Край/altai14.webp" alt="Памятник Василию Шукшину" class="slider-image" id="slider4-img2">
+                    <img src="../region/Алтайский Край/altai15.jpg" alt="Гора Пикет - место Шукшинских чтений" class="slider-image" id="slider4-img3">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('right2', -1)">❮</button>
+                    <span class="slider-counter" id="right2-counter">1/3</span>
+                    <button class="slider-btn next" onclick="changeImage('right2', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content left-text">
+                <h2>Культурное наследие и известные личности</h2>
+                <p>Алтайская земля подарила России выдающихся деятелей культуры и искусства. Сердце культурного наследия Алтая — <strong>село Сростки</strong>, родина великого писателя, актера и режиссера Василия Макаровича Шукшина. Здесь находится <strong>Всероссийский мемориальный музей-заповедник В.М. Шукшина</strong>, а на горе Пикет ежегодно проходят Шукшинские чтения, собирающие тысячи почитателей таланта писателя.</p>
+                <p>Алтайский край — родина многих известных личностей: космонавта Германа Титова, второго человека в космосе, чей музей находится в селе Полковниково; художника и философа Николая Рериха, который черпал вдохновение в алтайской природе; писателя и публициста Сергея Залыгина; скульптора Степана Намсараева. В регионе бережно хранят традиции <strong>старообрядчества</strong>, сохранившиеся в отдаленных деревнях, где до сих пор можно услышать древние обрядовые песни и познакомиться с уникальным бытом. Ежегодно в крае проводятся фестивали народного творчества, а традиционные алтайские ремесла — резьба по дереву, керамика, ткачество — продолжают жить и развиваться.</p>
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="../region/Алтайский Край/altai16.jpg" alt="Алтайский кан - кровяная колбаса" class="slider-image active" id="slider5-img1">
+                    <img src="../region/Алтайский Край/altai17.webp" alt="Бешпармак по-алтайски" class="slider-image" id="slider5-img2">
+                    <img src="../region/Алтайский Край/altai18.jpg" alt="Кочо - алтайский суп" class="slider-image" id="slider5-img3">
+                    <img src="../region/Алтайский Край/altai1619.webp" alt="Чегень и курут - молочные продукты" class="slider-image" id="slider5-img4">
+                    <img src="../region/Алтайский Край/altai20.jpg" alt="Ток-чок - алтайский десерт" class="slider-image" id="slider5-img5">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left3', -1)">❮</button>
+                    <span class="slider-counter" id="left3-counter">1/5</span>
+                    <button class="slider-btn next" onclick="changeImage('left3', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>Кулинарные традиции Алтайского края</h2>
+                <p>Алтайская кухня — это наследие кочевников, веками живших в гармонии с природой. Кулинарные традиции алтайцев, телеутов, кумандинцев и шорцев основаны на скотоводстве и охоте. Главные продукты — мясо, молоко и дикоросы. <strong>Кан</strong> — традиционная кровяная колбаса с добавлением чеснока, соли и специй, которую коптят или варят. <strong>Бешпармак</strong> (пять пальцев) — наваристое блюдо из конины или баранины с крупной лапшой, которое едят руками.</p>
+                <p>Одно из древнейших блюд — <strong>кочо</strong>, суп из конины с ячневой крупой, который томят в печи несколько часов до состояния густой кашицы. Из молока делают <strong>чегень</strong> — кисломолочный напиток, похожий на простоквашу, и <strong>курут</strong> — сушёные солёные шарики из чегеня, которые берут с собой в дорогу. С приходом русских переселенцев в алтайской кухне появились земледельческие традиции: стали выращивать зерновые, картофель, овощи.</p>
+                <p>Алтайские десерты и угощения: <strong>ток-чок</strong> — сладость из толокна, кедровых орехов и мёда. <strong>Кандык</strong> — печёные корни одноимённого растения, которые по вкусу напоминают сладкий батат. Из напитков популярен <strong>кымыз</strong> из кобыльего молока и травяные чаи с чабрецом, душицей, баданом. Алтай — родина пантового оленеводства, поэтому используют <strong>пантовую кровь</strong> в тонизирующих напитках. Всё это — кухня, где каждый продукт дарован природой и приготовлен с уважением к традициям предков.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+ // Состояние слайдеров
+       const sliders = {
+            left: { current: 0, total: 3 },
+            right: { current: 0, total: 4 },
+            left2: { current: 0, total: 5 },
+            right2: { current: 0, total: 3 },
+            left3: { current: 0, total: 5 }  
+        };
+        
+
+        // Функция возврата на предыдущую страницу
+        function goBack() {
+            window.history.back();
+        }
+
+        // Функция смены изображения
+        function changeImage(sliderId, direction) {
+            const slider = sliders[sliderId];
+            if (!slider) return;
+
+            const newIndex = slider.current + direction;
+            if (newIndex < 0 || newIndex >= slider.total) return;
+
+            // Скрываем текущее изображение
+            const oldImage = document.querySelector(`#slider${getSliderNumber(sliderId)}-img${slider.current + 1}`);
+            if (oldImage) oldImage.classList.remove('active');
+
+            // Обновляем индекс
+            slider.current = newIndex;
+
+            // Показываем новое изображение
+            const newImage = document.querySelector(`#slider${getSliderNumber(sliderId)}-img${slider.current + 1}`);
+            if (newImage) newImage.classList.add('active');
+
+            // Обновляем счетчик
+            const counter = document.getElementById(`${sliderId}-counter`);
+            if (counter) {
+                counter.textContent = `${slider.current + 1}/${slider.total}`;
+            }
+        }
+
+       function getSliderNumber(sliderId) {
+    const map = {
+        'left': '1',
+        'right': '2',
+        'left2': '3',
+        'right2': '4',
+        'left3': '5'
+    };
+    return map[sliderId] || '1';
+}
+    </script>
+</body>
+</html>

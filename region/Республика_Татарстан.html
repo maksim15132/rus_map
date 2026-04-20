@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Татарстан - Республика двух культур</title>
+    <link rel="stylesheet" href="../region/Курская область/style_region.css">
+</head>
+<body>
+    <div class="welcome-banner">
+        <img src="../img_logo/tatarstan.png" alt="Герб Республики Татарстан" class="logo">
+        <h1 class="logo_text">Добро пожаловать в Республику Татарстан</h1>
+        <button class="back-button" onclick="goBack()">← Назад</button>
+    </div>
+
+    <div class="main-layout">
+        <!-- Первый блок: текст справа, изображения слева (история края) -->
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="../region/Республика Татарстан/tatarstan1.webp" alt="Казанский Кремль" class="slider-image active" id="slider1-img1">
+                    <img src="../region/Республика Татарстан/tatarstan2.webp" alt="Башня Сююмбике" class="slider-image" id="slider1-img2">
+                    <img src="../region/Республика Татарстан/tatarstan3.webp" alt="Современная Казань" class="slider-image" id="slider1-img3">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left', -1)">❮</button>
+                    <span class="slider-counter" id="left-counter">1/3</span>
+                    <button class="slider-btn next" onclick="changeImage('left', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>История Татарстана</h2>
+                <p>Республика Татарстан — уникальный регион в центре России, где на протяжении веков мирно сосуществуют татарская и русская культуры. История края насчитывает тысячелетия: в средние века здесь располагалась Волжская Булгария — развитое государство, принявшее ислам в 922 году. В XIII веке земли вошли в состав Золотой Орды, а после её распада образовалось Казанское ханство (1438-1552). В 1552 году Казань была взята войсками Ивана Грозного и присоединена к Русскому царству.</p>
+                <p>Сегодня Республика Татарстан — один из самых динамично развивающихся регионов России. В состав республики входят 43 муниципальных района, 22 города, 18 поселков городского типа. Крупнейшие города — Казань (столица), Набережные Челны, Нижнекамск, Альметьевск, Елабуга, Лениногорск. Татарстан славится богатейшим культурным наследием — древними городами, памятниками архитектуры, уникальным сочетанием православных храмов и мусульманских мечетей.</p>
+            </div>
+        </div>
+
+        <!-- Второй блок: изображения слева, текст справа (символы и гордость края) -->
+        <div class="content-block reverse">
+            <div class="image-slider right-slider">
+                <div class="slider-container">
+                    <img src="../region/Республика Татарстан/tatarstan4.webp" alt="Мечеть Кул-Шариф" class="slider-image active" id="slider2-img1">
+                    <img src="../region/Республика Татарстан/tatarstan5.webp" alt="Казанский федеральный университет" class="slider-image" id="slider2-img2">
+                    <img src="../region/Республика Татарстан/tatarstan6.jpg" alt="Татарская тюбетейка" class="slider-image" id="slider2-img3">
+                    <img src="../region/Республика Татарстан/tatarstan7.jpg" alt="Казанский кот - символ Казани" class="slider-image" id="slider2-img4">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('right', -1)">❮</button>
+                    <span class="slider-counter" id="right-counter">1/4</span>
+                    <button class="slider-btn next" onclick="changeImage('right', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content left-text">
+                <h2>Символы и гордость Татарстана</h2>
+                <p>Татарстан славится своими уникальными символами, известными далеко за пределами России. Во-первых, это <strong>Казанский Кремль</strong> — объект Всемирного наследия ЮНЕСКО, единственная действующая татарская крепость в России. На его территории расположены Благовещенский собор (XVI век) и мечеть Кул-Шариф — главная соборная мечеть Татарстана, восстановленная в 2005 году.</p>
+                <p>Во-вторых, это <strong>Казанский (Приволжский) федеральный университет</strong> — один из старейших университетов России (основан в 1804 году). Здесь учились Лев Толстой, Владимир Ульянов-Ленин, Николай Лобачевский. В-третьих, это <strong>татарская тюбетейка</strong> и <strong>калфак</strong> — традиционные головные уборы, ставшие узнаваемыми символами татарской культуры. Особое место занимает <strong>казанский кот</strong> — знаменитый символ Казани, которому установлен памятник на улице Баумана.</p>
+            </div>
+        </div>
+
+        <!-- Третий блок: текст справа, изображения слева (достопримечательности) -->
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="../region/Республика Татарстан/tatarstan8.jpg" alt="Остров-град Свияжск" class="slider-image active" id="slider3-img1">
+                    <img src="../region/Республика Татарстан/tatarstan9.jpg" alt="Дворец земледельцев в Казани" class="slider-image" id="slider3-img2">
+                    <img src="../region/Республика Татарстан/tatarstan10.webp" alt="Храм всех религий в Старом Аракчино" class="slider-image" id="slider3-img3">
+                    <img src="../region/Республика Татарстан/tatarstan11.webp" alt="Раифский Богородицкий монастырь" class="slider-image" id="slider3-img4">
+                    <img src="../region/Республика Татарстан/tatarstan12.jfif" alt="Болгар - древняя столица Волжской Булгарии" class="slider-image" id="slider3-img5">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left2', -1)">❮</button>
+                    <span class="slider-counter" id="left2-counter">1/5</span>
+                    <button class="slider-btn next" onclick="changeImage('left2', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>Достопримечательности Татарстана</h2>
+                <p>Достопримечательности Татарстана поражают своим разнообразием. Центральное место занимает <strong>остров-град Свияжск</strong> — уникальный историко-культурный комплекс на острове при впадении Свияги в Волгу, основанный Иваном Грозным в 1551 году. Здесь находится Успенский собор с фресками XVI века — объект ЮНЕСКО. В Казани обязательны к посещению <strong>Дворец земледельцев</strong> — грандиозное здание с подсветкой, <strong>Храм всех религий</strong> (Вселенский храм) в Старом Аракчино — уникальное сооружение, объединяющее элементы 16 религиозных культур.</p>
+                <p>Особого внимания заслуживают <strong>Раифский Богородицкий монастырь</strong> (XVII век) — один из крупнейших действующих монастырей России, расположенный в живописном лесу на берегу озера. <strong>Древний город Болгар</strong> — первая столица Волжской Булгарии, объект Всемирного наследия ЮНЕСКО, где находится «Северный мавзолей», «Восточный мавзолей» и знаменитое «Чёрное озеро». <strong>Елабуга</strong> — родина художника Ивана Шишкина и поэтессы Марины Цветаевой, город с уникальной купеческой архитектурой XIX века. <strong>«Казань-Арена»</strong> — один из крупнейших стадионов Европы, построенный к Универсиаде-2013 и Чемпионату мира по футболу-2018.</p>
+            </div>
+        </div>
+
+        <!-- Четвертый блок: изображения слева, текст справа (культурное наследие) -->
+        <div class="content-block reverse">
+            <div class="image-slider right-slider">
+                <div class="slider-container">
+                    <img src="../region/Республика Татарстан/tatarstan13.jfif" alt="Татарский театр им. Галиаскара Камала" class="slider-image active" id="slider4-img1">
+                    <img src="../region/Республика Татарстан/tatarstan14.jpg" alt="Праздник Сабантуй" class="slider-image" id="slider4-img2">
+                    <img src="../region/Республика Татарстан/tatarstan15.jpg" alt="Музей чак-чака в Казани" class="slider-image" id="slider4-img3">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('right2', -1)">❮</button>
+                    <span class="slider-counter" id="right2-counter">1/3</span>
+                    <button class="slider-btn next" onclick="changeImage('right2', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content left-text">
+                <h2>Культурное наследие Татарстана</h2>
+                <p>Татарстан — уникальный регион, где переплелись исламские и православные традиции, татарская и русская культуры. <strong>Татарский академический театр имени Галиаскара Камала</strong> — ведущий национальный театр Татарстана, спектакли идут на татарском языке. Ежегодный праздник <strong>Сабантуй</strong> — древний татарский праздник плуга, посвящённый окончанию весенних полевых работ. Проводится в каждом городе и селе с конными скачками, борьбой куреш, лазанием на столб и угощениями.</p>
+                <p>Важнейшая часть культурного наследия — <strong>татарская литература и поэзия</strong>. Габдулла Тукай — народный поэт Татарстана, основоположник современного татарского литературного языка. Музыкальное наследие: <strong>татарские народные инструменты</strong> — курай (духовой), гармонь, кубыз (варган). <strong>Татарские ремёсла</strong>: ичижная вышивка (золотом по сафьяну), кожаная мозаика, керамика, ювелирное искусство. Сегодня в Татарстане работают музеи национальной культуры, проходят фестивали татарской песни «Узгэн», ежегодно отмечаются народные праздники — Навруз, Карга боткасы (Грачиная каша).</p>
+            </div>
+        </div>
+
+        <!-- Блок: Кулинарные традиции Татарстана -->
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="../region/Республика Татарстан/tatarstan16.jpg" alt="Чак-чак - главное татарское угощение" class="slider-image active" id="slider5-img1">
+                    <img src="../region/Республика Татарстан/tatarstan17.jpg" alt="Эчпочмак - треугольный пирог с мясом" class="slider-image" id="slider5-img2">
+                    <img src="../region/Республика Татарстан/tatarstan18.jpg" alt="Перемяч - татарский беляш" class="slider-image" id="slider5-img3">
+                    <img src="../region/Республика Татарстан/tatarstan19.jpg" alt="Кыстыбый - лепёшка с пшенной кашей" class="slider-image" id="slider5-img4">
+                    <img src="../region/Республика Татарстан/tatarstan20.jpg" alt="Татарские сладости" class="slider-image" id="slider5-img5">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left3', -1)">❮</button>
+                    <span class="slider-counter" id="left3-counter">1/5</span>
+                    <button class="slider-btn next" onclick="changeImage('left3', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>Кулинарные традиции Татарстана</h2>
+                <p>Татарская кухня — одна из самых вкусных и разнообразных в России. Главный кулинарный символ — <strong>чак-чак</strong>, медовое лакомство из обжаренных во фритюре кусочков теста, склеенных мёдом. Без чак-чака не обходится ни одна свадьба, юбилей или Сабантуй. Другой знаменитый десерт — <strong>баурсак</strong>, маленькие шарики из теста, жареные в масле.</p>
+                <p>Особое место занимает выпечка. <strong>Эчпочмак</strong> (треугольник) — пирожок с начинкой из мяса (баранины или говядины), картофеля и лука, запечённый в духовке. <strong>Перемяч</strong> (беляш) — жареный пирожок с мясным фаршем и луком, обязательно с дырочкой сверху. <strong>Кыстыбый</strong> — тонкая пресная лепёшка, сложенная пополам с начинкой из пшённой каши или картофельного пюре. <strong>Губадия</strong> — многослойный сладкий пирог с творогом, изюмом, курагой и черносливом, традиционное угощение на свадьбу.</p>
+                <p>Традиционные супы: <strong>токмач</strong> — лапшевый суп на курином бульоне, <strong>шульпа</strong> — наваристый мясной суп с овощами, <strong>азу по-татарски</strong> — тушёное мясо с картофелем и солёными огурцами. Из напитков популярны <strong>катык</strong> (простокваша), <strong>кумыс</strong> из кобыльего молока, <strong>бал</strong> — хмельной медовый напиток. Всё это — кухня, отражающая душу татарского народа: гостеприимную, щедрую и бережно хранящую вековые традиции.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Состояние слайдеров
+        const sliders = {
+            left: { current: 0, total: 3 },
+            right: { current: 0, total: 4 },
+            left2: { current: 0, total: 5 },
+            right2: { current: 0, total: 3 },
+            left3: { current: 0, total: 5 }
+        };
+
+        // Функция возврата на предыдущую страницу
+        function goBack() {
+            window.history.back();
+        }
+
+        // Функция смены изображения
+        function changeImage(sliderId, direction) {
+            const slider = sliders[sliderId];
+            if (!slider) return;
+
+            const newIndex = slider.current + direction;
+            if (newIndex < 0 || newIndex >= slider.total) return;
+
+            const oldImage = document.querySelector(`#slider${getSliderNumber(sliderId)}-img${slider.current + 1}`);
+            if (oldImage) oldImage.classList.remove('active');
+
+            slider.current = newIndex;
+
+            const newImage = document.querySelector(`#slider${getSliderNumber(sliderId)}-img${slider.current + 1}`);
+            if (newImage) newImage.classList.add('active');
+
+            const counter = document.getElementById(`${sliderId}-counter`);
+            if (counter) {
+                counter.textContent = `${slider.current + 1}/${slider.total}`;
+            }
+        }
+
+        function getSliderNumber(sliderId) {
+            const map = {
+                'left': '1',
+                'right': '2',
+                'left2': '3',
+                'right2': '4',
+                'left3': '5'
+            };
+            return map[sliderId] || '1';
+        }
+    </script>
+</body>
+</html>

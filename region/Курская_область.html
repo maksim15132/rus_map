@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курская область - Добро пожаловать</title>
+    <link rel="stylesheet" href="../region/Курская область/style_region.css">
+</head>
+<body>
+    <div class="welcome-banner">
+        <img src="../img_logo/гербкурскойобласти.png" alt="Герб Курской области" class="logo">
+        <h1 class="logo_text">Добро пожаловать в Курскую область</h1>
+        <button class="back-button" onclick="goBack()">← Назад</button>
+    </div>
+
+    <div class="main-layout">
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="../region/Курская область/kursk1.png" alt="Курск исторический" class="slider-image active" id="slider1-img1">
+                    <img src="../region/Курская область/kusrk2.jpg" alt="Курская крепость" class="slider-image" id="slider1-img2">
+                    <img src="../region/Курская область/kursk3.jpg" alt="Древний Курск" class="slider-image" id="slider1-img3">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left', -1)">❮</button>
+                    <span class="slider-counter" id="left-counter">1/3</span>
+                    <button class="slider-btn next" onclick="changeImage('left', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>История Курского края</h2>
+                <p>Курск — один из древнейших городов России. Первое упоминание о нем встречается в житии Феодосия Печерского и относится к 1032 году, а в летописях он фиксируется с 1095 года. В разные периоды Курск был пограничной крепостью на южных рубежах Русского государства, крупным торговым центром и уездным городом.</p>
+                <p>Сегодня Курская область — это регион Черноземья, в состав которого входит 28 районов и 5 городов областного подчинения. Помимо самого Курска, крупнейшие города — это Железногорск (центр горнодобывающей промышленности), Курчатов (где расположена Курская АЭС), а также Льгов, Рыльск и Щигры.</p>
+            </div>
+        </div>
+        <div class="content-block reverse">
+            <div class="image-slider right-slider">
+                <div class="slider-container">
+                    <img src="../region/Курская область/kursk4.jfif" alt="Курский соловей" class="slider-image active" id="slider2-img1">
+                    <img src="../region/Курская область/kursk5.jfif" alt="Курская битва" class="slider-image" id="slider2-img2">
+                    <img src="../region/Курская область/kursk6.jpg" alt="Курская антоновка" class="slider-image" id="slider2-img3">
+                    <img src="../region/Курская область/kursk7.jfif" alt="Курская магнитная аномалия" class="slider-image" id="slider2-img4">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('right', -1)">❮</button>
+                    <span class="slider-counter" id="right-counter">1/4</span>
+                    <button class="slider-btn next" onclick="changeImage('right', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content left-text">
+                <h2>Символы и гордость региона</h2>
+                <p>Сам город Курск славится сразу на несколько «голосов». Во-первых, это родина <strong>курского соловья</strong> — местные пернатые певцы издавна ценятся выше других за свое многоколенное и сложное пение. Во-вторых, этот город стал символом величайшего танкового сражения Второй мировой войны — <strong>Курской битвы</strong>, которая переломила ход войны. В-третьих, именно на территории области находится <strong>Курская магнитная аномалия</strong> — крупнейший в мире железорудный бассейн.</p>
+                <p>Кроме того, Курский край подарил миру знаменитый сорт яблок — <strong>курскую антоновку</strong>, которая считается одним из символов региона. Этот сорт ценится за неповторимый аромат, кисло-сладкий вкус и удивительную лежкость; еще в XIX веке антоновка из Курской губернии поставлялась к императорскому столу и широко экспортировалась за границу.</p>
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="../region/Курская область/kursk8.jpg" alt="Коренная пустынь" class="slider-image active" id="slider3-img1">
+                    <img src="../region/Курская область/kursk9.jpg" alt="Триумфальная арка" class="slider-image" id="slider3-img2">
+                    <img src="../region/Курская область/kursk11.jfif" alt="Памятник соловью" class="slider-image" id="slider3-img3">
+                    <img src="../region/Курская область/kursk10.jpg" alt="Знаменский собор" class="slider-image" id="slider3-img4">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left2', -1)">❮</button>
+                    <span class="slider-counter" id="left2-counter">1/4</span>
+                    <button class="slider-btn next" onclick="changeImage('left2', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>Достопримечательности Курска</h2>
+                <p>Достопримечательности Курска отражают эту многогранную историю. Центральное место занимает <strong>Коренная пустынь</strong> — знаменитый мужской монастырь, куда ежегодно проходит крестный ход с чудотворной иконой «Знамение». В самом городе обязательно стоит увидеть <strong>Триумфальную арку</strong>, посвященную героям Курской битвы, и мемориальный комплекс на месте танкового сражения.</p>
+                <p>Центральная улица — <strong>улица Ленина</strong> (бывшая Московская) — сохранила купеческую архитектуру XIX века. Среди необычных памятников выделяются <strong>памятник соловью</strong>. Завершает архитектурную картину <strong>Знаменский собор</strong> — величественный храм, долгое время служивший главной доминантой города.</p>
+            </div>
+        </div>
+        <div class="content-block reverse">
+            <div class="image-slider right-slider">
+                <div class="slider-container">
+                    <img src="../region/Курская область/kursk13.jpg" alt="Усадьба Афанасия Фета" class="slider-image active" id="slider4-img1">
+                    <img src="../region/Курская область/kursk12.jfif" alt="Усадьба Георгия Свиридова" class="slider-image" id="slider4-img2">
+                    <img src="../region/Курская область/kursk15.jpg" alt="Воробьевка пейзаж" class="slider-image" id="slider4-img3">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('right2', -1)">❮</button>
+                    <span class="slider-counter" id="right2-counter">1/3</span>
+                    <button class="slider-btn next" onclick="changeImage('right2', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content left-text">
+                <h2>Литературное и музыкальное наследие</h2>
+                <p>Особого внимания заслуживают усадьбы, связанные с именами великих русских поэтов. В деревне Воробьевка Золотухинского района расположена <strong>усадьба Афанасия Фета</strong> — ныне литературный музей-заповедник. Здесь поэт провел последние годы жизни, именно здесь он написал свои знаменитые стихотворения и мемуары. Усадьба стоит на высоком берегу реки Тускари в окружении живописнейшего пейзажа, который сам Фет называл «родиной вдохновения».</p>
+                <p>Неподалеку, в Фатеже, находится и <strong>музей посвященный композитору Георгию Свиридову</strong>, чья музыка стала неотъемлемой частью русской культуры. Эти места привлекают поклонников литературы и музыки, позволяя прикоснуться к творческому наследию, рожденному на курской земле.</p>
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="content-block centered-slider">
+                <div class="slider-container">
+                    <img src="../region/Курская область/kursk16.jfif" alt="Картофельная друнька" class="slider-image active" id="slider5-img1">
+                    <img src="../region/Курская область/kursk17.webp" alt="Гарбузня - каша в тыкве" class="slider-image" id="slider5-img2">
+                    <img src="../region/Курская область/kursk18.webp" alt="Вареники с дырочкой" class="slider-image" id="slider5-img3">
+                    <img src="../region/Курская область/kursk19.jpg" alt="Плеховские маковые пампушки" class="slider-image" id="slider5-img4">
+                    <img src="../region/Курская область/kursk20.jpg" alt="Гороховый кисель" class="slider-image" id="slider5-img5">
+                </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left3', -1)">❮</button>
+                    <span class="slider-counter" id="left3-counter">1/5</span>
+                    <button class="slider-btn next" onclick="changeImage('left3', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>Кулинарные традиции Курской области</h2>
+                <p>Традиционная курская кухня — это сытные и простые блюда. Почти каждый район Курской области имеет свои уникальные рецепты, которые передавались в деревнях из поколения в поколение и сохранились до сих пор. Из Курчатовского района родом <strong>картофельная друнька</strong> — картофельно-яичная запеканка с молоком, сливочным маслом и сметаной. Её выпекали в маленьких формах или готовили как многослойный пирог, украшали зеленью и сметаной или разносолами.</p>
+                <p>В Поныровском районе готовили <strong>гарбузню</strong> — кашу, запеченную в тыкве. В тыкву наливали молоко, добавляли кубики тыквы, пшенную крупу, соль, сахар, сливочное масло и иногда изюм. Подавали с лепешками из пшена, медом и молоком. А в Суджанском районе придумали особенные <strong>вареники с дырочкой</strong> — их не долепливали, оставляя отверстие, чтобы во время варки внутрь попадала вода, делая их более сочными. Начинка: творог, тушеная капуста, мак, малина, вишня или груша.</p>
+                <p>Известны курские десерты: <strong>плеховские маковые пампушки</strong> (село Плехово, Суджанский район) — из сладкого дрожжевого теста, запеченные в русской печи и политые кремом из меда и мака. Также в регионе делали <strong>гороховый кисель</strong> — горох мололи в муку, варили, заливали в форму для застывания, затем резали на кусочки и ели с солью, зеленью и луком. А еще <strong>молочный кисель</strong> — густой, чтобы ложка стояла, его не пьют, а нарезают и едят ложкой, украшая ягодами. Все эти блюда отражают душу курского края — щедрого, хлебосольного и бережно хранящего свои традиции.</p>
+            </div>
+        </div>
+    </div>
+
+  <script>
+        // Состояние слайдеров
+         const sliders = {
+            left: { current: 0, total: 3 },
+            right: { current: 0, total: 4 },
+            left2: { current: 0, total: 5 },
+            right2: { current: 0, total: 3 },
+            left3: { current: 0, total: 5 }  
+        };
+        
+
+        // Функция возврата на предыдущую страницу
+        function goBack() {
+            window.history.back();
+        }
+
+        // Функция смены изображения
+        function changeImage(sliderId, direction) {
+            const slider = sliders[sliderId];
+            if (!slider) return;
+
+            const newIndex = slider.current + direction;
+            if (newIndex < 0 || newIndex >= slider.total) return;
+
+            // Скрываем текущее изображение
+            const oldImage = document.querySelector(`#slider${getSliderNumber(sliderId)}-img${slider.current + 1}`);
+            if (oldImage) oldImage.classList.remove('active');
+
+            // Обновляем индекс
+            slider.current = newIndex;
+
+            // Показываем новое изображение
+            const newImage = document.querySelector(`#slider${getSliderNumber(sliderId)}-img${slider.current + 1}`);
+            if (newImage) newImage.classList.add('active');
+
+            // Обновляем счетчик
+            const counter = document.getElementById(`${sliderId}-counter`);
+            if (counter) {
+                counter.textContent = `${slider.current + 1}/${slider.total}`;
+            }
+        }
+
+       function getSliderNumber(sliderId) {
+    const map = {
+        'left': '1',
+        'right': '2',
+        'left2': '3',
+        'right2': '4',
+        'left3': '5'
+    };
+    return map[sliderId] || '1';
+}
+    </script>
+</body>
+</html>

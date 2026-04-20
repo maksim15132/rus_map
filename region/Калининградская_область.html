@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калининградская область - Янтарный край России</title>
+    <link rel="stylesheet" href="../region/Курская область/style_region.css">
+</head>
+<body>
+    <div class="welcome-banner">
+        <img src="../img_logo/kalingrad.png" alt="Герб Калининградской области" class="logo">
+        <h1 class="logo_text">Добро пожаловать в Калининградскую область</h1>
+        <button class="back-button" onclick="goBack()">← Назад</button>
+    </div>
+
+    <div class="main-layout">
+        <!-- Первый блок: текст справа, изображения слева (история края) -->
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="../region/Калининградская область/kalingrad1.webp" alt="Кафедральный собор в Калининграде" class="slider-image active" id="slider1-img1">
+                    <img src="../region/Калининградская область/kalingrad2.webp" alt="Королевский замок Кёнигсберг" class="slider-image" id="slider1-img2">
+                    <img src="../region/Калининградская область/kalingrad3.webp" alt="Современный Калининград" class="slider-image" id="slider1-img3">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left', -1)">❮</button>
+                    <span class="slider-counter" id="left-counter">1/3</span>
+                    <button class="slider-btn next" onclick="changeImage('left', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>История Янтарного края</h2>
+                <p>Калининградская область — самый западный регион России, уникальный эксклав на берегу Балтийского моря. Его история насчитывает столетия: средневековые прусские племена, Тевтонский орден, основавший в 1255 году замок Кёнигсберг, затем столица Восточной Пруссии. В 1945 году по итогам Потсдамской конференции северная часть Восточной Пруссии отошла к СССР. В 1946 году город Кёнигсберг был переименован в Калининград, а область названа в честь Михаила Калинина.</p>
+                <p>Сегодня Калининградская область — это субъект Российской Федерации, расположенный на побережье Балтийского моря. В состав региона входят 13 районов, 22 города, 5 поселков городского типа. Крупнейшие города — Калининград (административный центр), Советск, Черняховск, Балтийск, Гусев, Светлый. Область славится богатейшим культурным наследием — готической архитектурой, замками, фортификационными сооружениями, а также знаменитым янтарным промыслом.</p>
+            </div>
+        </div>
+
+        <!-- Второй блок: изображения слева, текст справа (символы и гордость края) -->
+        <div class="content-block reverse">
+            <div class="image-slider right-slider">
+                <div class="slider-container">
+                    <img src="../region/Калининградская область/kalingrad4.jpg" alt="Балтийский янтарь" class="slider-image active" id="slider2-img1">
+                    <img src="../region/Калининградская область/kalingrad5.jpg" alt="Куршская коса" class="slider-image" id="slider2-img2">
+                    <img src="../region/Калининградская область/kalingrad6.jpg" alt="Балтийское море" class="slider-image" id="slider2-img3">
+                    <img src="../region/Калининградская область/kalingrad7.jfif" alt="Иммануил Кант" class="slider-image" id="slider2-img4">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('right', -1)">❮</button>
+                    <span class="slider-counter" id="right-counter">1/4</span>
+                    <button class="slider-btn next" onclick="changeImage('right', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content left-text">
+                <h2>Символы и гордость Калининградской области</h2>
+                <p>Калининградская область славится своими уникальными символами. Во-первых, это <strong>янтарь</strong> — регион добывает до 90% мирового запаса этого солнечного камня. На побережье Балтики находится единственное в мире промышленное предприятие по добыче янтаря — Калининградский янтарный комбинат в посёлке Янтарный. Здесь можно найти кусочки окаменевшей смолы возрастом более 40 миллионов лет с включениями древних насекомых и растений.</p>
+                <p>Во-вторых, это <strong>Куршская коса</strong> — национальный парк и объект Всемирного наследия ЮНЕСКО, уникальная песчаная дюна протяжённостью почти 100 километров. В-третьих, это <strong>Балтийское море</strong> — главная природная достопримечательность региона, где находятся лучшие пляжи России, отмеченные международной наградой «Голубой флаг». Особое место занимает <strong>философ Иммануил Кант</strong>, который всю жизнь прожил в Кёнигсберге и похоронен у Кафедрального собора.</p>
+            </div>
+        </div>
+
+        <!-- Третий блок: текст справа, изображения слева (достопримечательности) -->
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="../region/Калининградская область/kalingrad8.jpg" alt="Кафедральный собор на острове Кнайпхоф" class="slider-image active" id="slider3-img1">
+                    <img src="../region/Калининградская область/kalingrad9.jfif" alt="Рыбная деревня в Калининграде" class="slider-image" id="slider3-img2">
+                    <img src="../region/Калининградская область/kalingrad10.webp" alt="Форт №5 - памятник фортификации" class="slider-image" id="slider3-img3">
+                    <img src="../region/Калининградская область/kalingrad11.jpg" alt="Музей Мирового океана" class="slider-image" id="slider3-img4">
+                    <img src="../region/Калининградская область/kalingrad12.jpg" alt="Замок Шаакен" class="slider-image" id="slider3-img5">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left2', -1)">❮</button>
+                    <span class="slider-counter" id="left2-counter">1/5</span>
+                    <button class="slider-btn next" onclick="changeImage('left2', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>Достопримечательности Калининградской области</h2>
+                <p>Достопримечательности Янтарного края уникальны для России. Центральное место занимает <strong>Кафедральный собор</strong> на острове Кнайпхоф — главный символ Калининграда, построенный в XIV веке в стиле кирпичной готики. Рядом — могила Иммануила Канта и самый большой в Европе орган. <strong>Рыбная деревня</strong> — современный квартал, стилизованный под довоенный Кёнигсберг, с маяком и смотровой площадкой.</p>
+                <p>Особого внимания заслуживают <strong>фортификационные сооружения</strong>: 15 бастионов, 7 равелинов и множество фортов, включая форт №5 «Король Фридрих-Вильгельм III», где сейчас находится музей. <strong>Музей Мирового океана</strong> — единственный в России комплекс с натурными экспонатами судов и подводной лодки. Среди старинных замков выделяются <strong>Вальдау</strong>, <strong>Шаакен</strong>, <strong>Георгенбург</strong> и <strong>Инстербург</strong>. Завершает картину <strong>Бранденбургские ворота</strong> — единственные из семи сохранившихся городских ворот Кёнигсберга, которые до сих пор используются по прямому назначению.</p>
+            </div>
+        </div>
+
+        <!-- Четвертый блок: изображения слева, текст справа (культурное наследие) -->
+        <div class="content-block reverse">
+            <div class="image-slider right-slider">
+                <div class="slider-container">
+                    <img src="../region/Калининградская область/kalingrad13.webp" alt="Калининградский зоопарк" class="slider-image active" id="slider4-img1">
+                    <img src="../region/Калининградская область/kalingrad14.jfif" alt="Фестиваль балтийского янтаря" class="slider-image" id="slider4-img2">
+                    <img src="../region/Калининградская область/kalingrad15.jfif" alt="Балтийская коса и Светлогорск" class="slider-image" id="slider4-img3">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('right2', -1)">❮</button>
+                    <span class="slider-counter" id="right2-counter">1/3</span>
+                    <button class="slider-btn next" onclick="changeImage('right2', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content left-text">
+                <h2>Культурное и природное наследие</h2>
+                <p>Калининградская область — это уникальное переплетение европейской и русской культуры. <strong>Калининградский зоопарк</strong> — один из старейших в Европе (основан в 1896 году), здесь сохранились исторические ворота и скульптуры. Ежегодно проходят фестивали: <strong>«Кантата»</strong> (музыкальный фестиваль у стен Кафедрального собора), <strong>«Балтийский янтарь»</strong> (театральный фестиваль), <strong>«Кёнигсбергский собор»</strong> (органные вечера).</p>
+                <p>Природное наследие включает <strong>Балтийскую косу</strong> — ещё один уникальный дюнный ландшафт с танцующим лесом, <strong>озеро Виштынецкое</strong> — одно из глубочайших и чистейших в Европе, <strong>Виштынецкий лес</strong> — часть древней Августовской пущи. Популярны курорты: <strong>Светлогорск</strong> с фуникулёром и водонапорной башней, <strong>Зеленоградск</strong> с променадом и музеем кошек, <strong>Янтарный</strong> с самым широким пляжем. Сегодня регион активно развивает туристическую инфраструктуру, сохраняя историческую память и создавая новые культурные пространства.</p>
+            </div>
+        </div>
+
+        <!-- Блок: Кулинарные традиции Калининградской области -->
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="../region/Калининградская область/kalingrad16.jpg" alt="Кёнигсбергские клопсы" class="slider-image active" id="slider5-img1">
+                    <img src="../region/Калининградская область/kalingrad17.webp" alt="Копчёный балтийский угорь" class="slider-image" id="slider5-img2">
+                    <img src="../region/Калининградская область/kalingrad18.jpeg" alt="Калининградский марципан" class="slider-image" id="slider5-img3">
+                    <img src="../region/Калининградская область/kalingrad19.jpg" alt="Балтийская килька и шпроты" class="slider-image" id="slider5-img4">
+                    <img src="../region/Калининградская область/kalingrad20.jpg" alt="Янтарная наливка" class="slider-image" id="slider5-img5">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left3', -1)">❮</button>
+                    <span class="slider-counter" id="left3-counter">1/5</span>
+                    <button class="slider-btn next" onclick="changeImage('left3', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>Кулинарные традиции Калининградской области</h2>
+                <p>Калининградская кухня — это уникальный сплав немецких, польских, литовских и русских традиций с балтийскими морепродуктами. Самое знаменитое блюдо — <strong>кёнигсбергские клопсы</strong>. Это фрикадельки из телятины с каперсами, которые подают в белом соусе с рисом или картофелем. Рецепт был придуман в XIX веке и до сих пор считается гастрономическим брендом региона.</p>
+                <p>Из рыбы особенно ценятся <strong>балтийский угорь</strong> (копчёный — деликатес), <strong>балтийская килька</strong> (из которой делают знаменитые шпроты), <strong>судак</strong>, <strong>треска</strong>. Традиционные немецкие закуски: <strong>шпроты домашнего приготовления</strong>, <strong>селёдка под шубой по-балтийски</strong> (с яблоком и свёклой), <strong>форшмак из селёдки</strong>. В ресторанах подают <strong>жареную камбалу</strong> и <strong>балтийскую уху</strong> на копчёной кильке.</p>
+                <p>Калининград славится <strong>марципаном</strong> — кондитерским изделием из миндаля. В Кёнигсберге производство марципана было поставлено на поток, существовала даже «марципановая комната» в замке. Сегодня марципан делают в Калининграде по старинным рецептам. Любимый десерт — <strong>кёнигсбергский марципановый торт</strong> и <strong>пряники с марципаном</strong>. Из напитков популярны <strong>янтарная настойка</strong> (на меду и травах), <strong>балтийский травяной бальзам</strong> и <strong>кофе по-кёнигсбергски</strong> со взбитыми сливками.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Состояние слайдеров
+        const sliders = {
+            left: { current: 0, total: 3 },
+            right: { current: 0, total: 4 },
+            left2: { current: 0, total: 5 },
+            right2: { current: 0, total: 3 },
+            left3: { current: 0, total: 5 }
+        };
+
+        // Функция возврата на предыдущую страницу
+        function goBack() {
+            window.history.back();
+        }
+
+        // Функция смены изображения
+        function changeImage(sliderId, direction) {
+            const slider = sliders[sliderId];
+            if (!slider) return;
+
+            const newIndex = slider.current + direction;
+            if (newIndex < 0 || newIndex >= slider.total) return;
+
+            const oldImage = document.querySelector(`#slider${getSliderNumber(sliderId)}-img${slider.current + 1}`);
+            if (oldImage) oldImage.classList.remove('active');
+
+            slider.current = newIndex;
+
+            const newImage = document.querySelector(`#slider${getSliderNumber(sliderId)}-img${slider.current + 1}`);
+            if (newImage) newImage.classList.add('active');
+
+            const counter = document.getElementById(`${sliderId}-counter`);
+            if (counter) {
+                counter.textContent = `${slider.current + 1}/${slider.total}`;
+            }
+        }
+
+        function getSliderNumber(sliderId) {
+            const map = {
+                'left': '1',
+                'right': '2',
+                'left2': '3',
+                'right2': '4',
+                'left3': '5'
+            };
+            return map[sliderId] || '1';
+        }
+    </script>
+</body>
+</html>

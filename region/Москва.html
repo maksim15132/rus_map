@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Москва - Столица России</title>
+    <link rel="stylesheet" href="../region/Курская область/style_region.css">
+</head>
+<body>
+    <div class="welcome-banner">
+        <img src="../img_logo/mockva.png" alt="Герб Москвы" class="logo">
+        <h1 class="logo_text">Добро пожаловать в Москву</h1>
+        <button class="back-button" onclick="goBack()">← Назад</button>
+    </div>
+
+    <div class="main-layout">
+        <!-- Первый блок: история Москвы -->
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="https://via.placeholder.com/400x300?text=Красная+площадь+история" alt="Красная площадь" class="slider-image active" id="slider1-img1">
+                    <img src="https://via.placeholder.com/400x300?text=Юрий+Долгорукий+памятник" alt="Памятник Юрию Долгорукому" class="slider-image" id="slider1-img2">
+                    <img src="https://via.placeholder.com/400x300?text=Москва+современная" alt="Современная Москва" class="slider-image" id="slider1-img3">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left', -1)">❮</button>
+                    <span class="slider-counter" id="left-counter">1/3</span>
+                    <button class="slider-btn next" onclick="changeImage('left', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>История столицы</h2>
+                <p>Москва — столица Российской Федерации, город федерального значения, крупнейший мегаполис страны и Европы. Первое упоминание о Москве относится к 1147 году, когда князь Юрий Долгорукий пригласил своего союзника князя Святослава Олеговича: «Приди ко мне, брате, в Москов». Именно этот год считается официальной датой основания города. Постепенно Москва стала центром объединения русских земель, а в XV веке — столицей Русского государства.</p>
+                <p>Сегодня Москва — это огромный мегаполис с населением более 13 миллионов человек. Город разделён на 12 административных округов и 125 районов. Москва — политический, экономический, культурный и научный центр России. Здесь находятся органы государственной власти, штаб-квартиры крупнейших российских компаний, ведущие университеты и театры. Москва славится богатейшим историческим наследием, уникальной архитектурой и динамичным развитием.</p>
+            </div>
+        </div>
+
+        <!-- Второй блок: символы и гордость Москвы -->
+        <div class="content-block reverse">
+            <div class="image-slider right-slider">
+                <div class="slider-container">
+                    <img src="https://via.placeholder.com/400x300?text=Московский+Кремль" alt="Московский Кремль" class="slider-image active" id="slider2-img1">
+                    <img src="https://via.placeholder.com/400x300?text=Собор+Василия+Блаженного" alt="Собор Василия Блаженного" class="slider-image" id="slider2-img2">
+                    <img src="https://via.placeholder.com/400x300?text=Царь-пушка+Царь-колокол" alt="Царь-пушка и Царь-колокол" class="slider-image" id="slider2-img3">
+                    <img src="https://via.placeholder.com/400x300?text=Московское+метро" alt="Московское метро" class="slider-image" id="slider2-img4">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('right', -1)">❮</button>
+                    <span class="slider-counter" id="right-counter">1/4</span>
+                    <button class="slider-btn next" onclick="changeImage('right', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content left-text">
+                <h2>Символы и гордость столицы</h2>
+                <p>Москва славится символами, известными во всём мире. Главный символ — <strong>Московский Кремль</strong> и <strong>Красная площадь</strong>, объекты Всемирного наследия ЮНЕСКО. Кремль — резиденция Президента России, здесь находятся Спасская башня с курантами, Царь-пушка и Царь-колокол. <strong>Собор Василия Блаженного</strong> (Покровский собор) — уникальный памятник русской архитектуры XVI века с яркими луковичными куполами.</p>
+                <p>Другой узнаваемый символ — <strong>Московский государственный университет (МГУ)</strong> на Воробьёвых горах, главное здание — одна из семи сталинских высоток. <strong>Московское метро</strong> — настоящий подземный дворец, многие станции признаны памятниками архитектуры. <strong>ВДНХ</strong> (Выставка достижений народного хозяйства) — крупнейший выставочный комплекс в мире с фонтанами, павильонами и знаменитым ракетой-носителем «Восток». Завершает символы <strong>Храм Христа Спасителя</strong> — главный кафедральный собор Русской православной церкви, восстановленный в 1990-х годах.</p>
+            </div>
+        </div>
+
+        <!-- Третий блок: достопримечательности -->
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="https://via.placeholder.com/400x300?text=Большой+театр" alt="Большой театр" class="slider-image active" id="slider3-img1">
+                    <img src="https://via.placeholder.com/400x300?text=Третьяковская+галерея" alt="Третьяковская галерея" class="slider-image" id="slider3-img2">
+                    <img src="https://via.placeholder.com/400x300?text=Парк+Зарядье" alt="Парк Зарядье" class="slider-image" id="slider3-img3">
+                    <img src="https://via.placeholder.com/400x300?text=Арбат+улица" alt="Улица Арбат" class="slider-image" id="slider3-img4">
+                    <img src="https://via.placeholder.com/400x300?text=Москва-Сити" alt="Москва-Сити" class="slider-image" id="slider3-img5">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left2', -1)">❮</button>
+                    <span class="slider-counter" id="left2-counter">1/5</span>
+                    <button class="slider-btn next" onclick="changeImage('left2', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>Достопримечательности Москвы</h2>
+                <p>Москва — город, где на каждом шагу встречаются исторические и культурные памятники. <strong>Большой театр</strong> — один из главных театров оперы и балета в мире, его здание с квадригой Аполлона — визитная карточка столицы. <strong>Государственная Третьяковская галерея</strong> — главный музей русского изобразительного искусства, где хранятся шедевры от Андрея Рублёва до Казимира Малевича. <strong>Музей-заповедник «Коломенское»</strong> — бывшая царская резиденция с церковью Вознесения XVI века, также объектом ЮНЕСКО.</p>
+                <p>Современные достопримечательности: <strong>парк «Зарядье»</strong> с парящим мостом над Москвой-рекой и медиацентром; <strong>Москва-Сити</strong> — деловой центр с небоскрёбами, откуда открывается панорамный вид на город; <strong>пешеходная улица Арбат</strong> — место притяжения туристов, музыкантов и художников. <strong>Музей космонавтики</strong> у монумента «Покорителям космоса» рассказывает об истории освоения космоса. <strong>Цирк Никулина на Цветном бульваре</strong> и <strong>Московский зоопарк</strong> — любимые места отдыха москвичей и гостей столицы.</p>
+            </div>
+        </div>
+
+        <!-- Четвертый блок: культурное наследие -->
+        <div class="content-block reverse">
+            <div class="image-slider right-slider">
+                <div class="slider-container">
+                    <img src="https://via.placeholder.com/400x300?text=Новодевичий+монастырь" alt="Новодевичий монастырь" class="slider-image active" id="slider4-img1">
+                    <img src="https://via.placeholder.com/400x300?text=Дом-музей+Чехова+Москва" alt="Дом-музей А.П. Чехова" class="slider-image" id="slider4-img2">
+                    <img src="https://via.placeholder.com/400x300?text=Библиотека+имени+Ленина" alt="Российская государственная библиотека" class="slider-image" id="slider4-img3">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('right2', -1)">❮</button>
+                    <span class="slider-counter" id="right2-counter">1/3</span>
+                    <button class="slider-btn next" onclick="changeImage('right2', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content left-text">
+                <h2>Культурное и литературное наследие</h2>
+                <p>Москва — культурная столица России, где жили и творили величайшие писатели, поэты и композиторы. <strong>Дом-музей А.С. Пушкина</strong> на Арбате, <strong>Музей-квартира Ф.М. Достоевского</strong>, <strong>Дом-музей А.П. Чехова</strong> — всё это места, где можно прикоснуться к истории русской литературы. <strong>Новодевичий монастырь</strong> (XVI век) — объект ЮНЕСКО и место захоронения многих выдающихся деятелей культуры — Гоголя, Чехова, Булгакова, Маяковского, Шостаковича.</p>
+                <p>Московские театры: <strong>МХТ им. Чехова</strong>, <strong>Театр им. Вахтангова</strong>, <strong>Театр на Таганке</strong>, <strong>Современник</strong>. Библиотеки: <strong>Российская государственная библиотека</strong> (бывшая им. Ленина) — одна из крупнейших библиотек мира. Москва — город фестивалей: ежегодно проходят <strong>Московский международный кинофестиваль</strong>, <strong>«Золотая маска»</strong> (театральная премия), <strong>«Круг света»</strong> (фестиваль световых шоу). Всё это делает Москву центром притяжения для ценителей искусства со всего мира.</p>
+            </div>
+        </div>
+
+        <!-- Пятый блок: кулинарные традиции Москвы -->
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="https://via.placeholder.com/400x300?text=Московский+калач" alt="Московский калач" class="slider-image active" id="slider5-img1">
+                    <img src="https://via.placeholder.com/400x300?text=Расстегай+московский" alt="Расстегай московский" class="slider-image" id="slider5-img2">
+                    <img src="https://via.placeholder.com/400x300?text=Московский+борщ" alt="Московский борщ" class="slider-image" id="slider5-img3">
+                    <img src="https://via.placeholder.com/400x300?text=Пряники+печатные" alt="Печатные пряники" class="slider-image" id="slider5-img4">
+                    <img src="https://via.placeholder.com/400x300?text=Московская+пастила" alt="Московская пастила" class="slider-image" id="slider5-img5">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left3', -1)">❮</button>
+                    <span class="slider-counter" id="left3-counter">1/5</span>
+                    <button class="slider-btn next" onclick="changeImage('left3', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>Кулинарные традиции Москвы</h2>
+                <p>Московская кухня — это синтез традиций всей России, который складывался веками. Знаменитое блюдо — <strong>московский калач</strong>, сдобный белый хлеб в форме замка́ с дужкой. В XIX веке калачи были визитной карточкой Москвы, их возили в Петербург и даже в Париж. Другое легендарное блюдо — <strong>расстегай</strong>, открытый пирожок с начинкой из рыбы (осетрина, сёмга, судак), грибов или мяса. Название произошло от слова «растегать» — бока пирожка отгибали, чтобы было видно начинку.</p>
+                <p>Традиционные супы: <strong>московский борщ</strong> — на говяжьем бульоне с добавлением ветчины и сосисек, подаётся с ватрушкой или крупеником. <strong>Солянка сборная мясная</strong> — наваристый суп с соленьями, лимоном и маслинами, популярный в московских трактирах. Из закусок — <strong>московский салат</strong> (с варёным картофелем, курицей, солёными огурцами, яйцом и сметаной).</p>
+                <p>Московские сладости: <strong>печатные пряники</strong> с глазурью и начинкой, <strong>московская пастила</strong> (яблочная, с мёдом). Знаменитые <strong>конфеты «Мишка косолапый»</strong> и <strong>«Птичье молоко»</strong> (впервые изобретены на московской фабрике «Рот Фронт»). Из напитков популярен <strong>сбитень</strong> — горячий медовый напиток с пряностями, предшественник чая в допетровской Руси. Всё это — кухня, отражающая историю и душу древней столицы.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const sliders = {
+            left: { current: 0, total: 3 },
+            right: { current: 0, total: 4 },
+            left2: { current: 0, total: 5 },
+            right2: { current: 0, total: 3 },
+            left3: { current: 0, total: 5 }
+        };
+
+        function goBack() {
+            window.history.back();
+        }
+
+        function changeImage(sliderId, direction) {
+            const slider = sliders[sliderId];
+            if (!slider) return;
+
+            const newIndex = slider.current + direction;
+            if (newIndex < 0 || newIndex >= slider.total) return;
+
+            const oldImage = document.querySelector(`#slider${getSliderNumber(sliderId)}-img${slider.current + 1}`);
+            if (oldImage) oldImage.classList.remove('active');
+
+            slider.current = newIndex;
+
+            const newImage = document.querySelector(`#slider${getSliderNumber(sliderId)}-img${slider.current + 1}`);
+            if (newImage) newImage.classList.add('active');
+
+            const counter = document.getElementById(`${sliderId}-counter`);
+            if (counter) {
+                counter.textContent = `${slider.current + 1}/${slider.total}`;
+            }
+        }
+
+        function getSliderNumber(sliderId) {
+            const map = {
+                'left': '1',
+                'right': '2',
+                'left2': '3',
+                'right2': '4',
+                'left3': '5'
+            };
+            return map[sliderId] || '1';
+        }
+    </script>
+</body>
+</html>

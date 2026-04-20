@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Московская область - Подмосковье</title>
+    <link rel="stylesheet" href="../region/Курская область/style_region.css">
+</head>
+<body>
+    <div class="welcome-banner">
+        <img src="../img_logo/moscowobl.png" alt="Герб Московской области" class="logo">
+        <h1 class="logo_text">Добро пожаловать в Московскую область</h1>
+        <button class="back-button" onclick="goBack()">← Назад</button>
+    </div>
+
+    <div class="main-layout">
+        <!-- Первый блок: история области -->
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="https://via.placeholder.com/400x300?text=Усадьба+Архангельское" alt="Усадьба Архангельское" class="slider-image active" id="slider1-img1">
+                    <img src="https://via.placeholder.com/400x300?text=Троице-Сергиева+Лавра" alt="Троице-Сергиева Лавра" class="slider-image" id="slider1-img2">
+                    <img src="https://via.placeholder.com/400x300?text=Подмосковье+современное" alt="Современное Подмосковье" class="slider-image" id="slider1-img3">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left', -1)">❮</button>
+                    <span class="slider-counter" id="left-counter">1/3</span>
+                    <button class="slider-btn next" onclick="changeImage('left', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>История Подмосковья</h2>
+                <p>Московская область — субъект Российской Федерации, расположенный в центральной части страны. Область была образована 14 января 1929 года. Она не имеет административного центра — правительство области находится в Москве и Красногорске. Территория Подмосковья — 44 тысячи квадратных километров, это один из самых густонаселённых регионов России (более 8,5 млн жителей).</p>
+                <p>История Подмосковья тесно связана с Москвой. Именно здесь формировалось Русское государство, находились вотчины знатных бояр и царские усадьбы. Сегодня Московская область включает 60 городских округов, 31 город, множество сёл и деревень. Крупнейшие города — Балашиха, Химки, Подольск, Королёв, Мытищи, Люберцы, Красногорск, Одинцово. Область славится своими историческими усадьбами, монастырями, наукоградами и высокотехнологичными производствами.</p>
+            </div>
+        </div>
+
+        <!-- Второй блок: символы и гордость -->
+        <div class="content-block reverse">
+            <div class="image-slider right-slider">
+                <div class="slider-container">
+                    <img src="https://via.placeholder.com/400x300?text=Музей-заповедник+Чехова+Мелихово" alt="Мелихово - усадьба Чехова" class="slider-image active" id="slider2-img1">
+                    <img src="https://via.placeholder.com/400x300?text=Музей-заповедник+Пушкина+Большие+Вязёмы" alt="Большие Вязёмы - усадьба Пушкина" class="slider-image" id="slider2-img2">
+                    <img src="https://via.placeholder.com/400x300?text=Музей+Чайковского+Клин" alt="Музей Чайковского в Клину" class="slider-image" id="slider2-img3">
+                    <img src="https://via.placeholder.com/400x300?text=Гжель+фарфор" alt="Гжельский фарфор" class="slider-image" id="slider2-img4">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('right', -1)">❮</button>
+                    <span class="slider-counter" id="right-counter">1/4</span>
+                    <button class="slider-btn next" onclick="changeImage('right', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content left-text">
+                <h2>Символы и гордость Подмосковья</h2>
+                <p>Московская область — сокровищница русской культуры. Здесь находятся десятки знаменитых усадеб: <strong>Архангельское</strong> («подмосковный Версаль»), <strong>Абрамцево</strong> (центр художественного кружка), <strong>Мелихово</strong> (музей-заповедник А.П. Чехова), <strong>Большие Вязёмы</strong> (связана с именем А.С. Пушкина), <strong>Музей-заповедник Д.И. Менделеева и А.А. Блока в Шахматово</strong>, <strong>Музей П.И. Чайковского в Клину</strong>. Эти места привлекают поклонников литературы, музыки и живописи.</p>
+                <p>Всемирную известность Подмосковью принесли народные промыслы: <strong>гжельская керамика</strong> (сине-белый фарфор), <strong>жостовские подносы</strong> (лаковая живопись), <strong>павловопосадские платки</strong> (шерстяные и пуховые). Подмосковье — родина российской космонавтики: в Королёве находится Центр управления полётами и ракетно-космическая корпорация «Энергия», в Звёздном городке — Центр подготовки космонавтов.</p>
+            </div>
+        </div>
+
+        <!-- Третий блок: достопримечательности -->
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="https://via.placeholder.com/400x300?text=Новый+Иерусалим" alt="Воскресенский монастырь Новый Иерусалим" class="slider-image active" id="slider3-img1">
+                    <img src="https://via.placeholder.com/400x300?text=Саввино-Сторожевский+монастырь" alt="Саввино-Сторожевский монастырь" class="slider-image" id="slider3-img2">
+                    <img src="https://via.placeholder.com/400x300?text=Коломна+кремль" alt="Коломенский кремль" class="slider-image" id="slider3-img3">
+                    <img src="https://via.placeholder.com/400x300?text=Сергиев+Посад+лавра" alt="Троице-Сергиева Лавра в Сергиевом Посаде" class="slider-image" id="slider3-img4">
+                    <img src="https://via.placeholder.com/400x300?text=Музей+памятник+Зоя+Космодемьянская" alt="Мемориал Зои Космодемьянской в Петрищево" class="slider-image" id="slider3-img5">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left2', -1)">❮</button>
+                    <span class="slider-counter" id="left2-counter">1/5</span>
+                    <button class="slider-btn next" onclick="changeImage('left2', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>Достопримечательности Подмосковья</h2>
+                <p>Подмосковье — это более 3 тысяч памятников истории и культуры. Духовные центры: <strong>Троице-Сергиева Лавра</strong> в Сергиевом Посаде — крупнейший мужской монастырь России, объект Всемирного наследия ЮНЕСКО; <strong>Воскресенский Новоиерусалимский монастырь</strong> в Истре — точная копия храма Гроба Господня в Иерусалиме; <strong>Саввино-Сторожевский монастырь</strong> в Звенигороде.</p>
+                <p>Города Подмосковья хранят древнее наследие: <strong>Коломна</strong> с уникальным кремлём XIV века и музеем пастилы; <strong>Зарайск</strong> с единственным полностью сохранившимся кремлём XVI века; <strong>Дмитров</strong> с земляным валом XII века; <strong>Волоколамск</strong> — один из древнейших городов России. Современные достопримечательности: <strong>главный храм Вооружённых Сил в парке «Патриот»</strong>, <strong>мемориал Зои Космодемьянской в Петрищево</strong>, <strong>Московский областной театр юного зрителя</strong>. Природа: <strong>Приокско-Террасный заповедник</strong> (зубры), <strong>Лосиный остров</strong> (национальный парк).</p>
+            </div>
+        </div>
+
+        <!-- Четвертый блок: культурное наследие -->
+        <div class="content-block reverse">
+            <div class="image-slider right-slider">
+                <div class="slider-container">
+                    <img src="https://via.placeholder.com/400x300?text=Усадьба+Абрамцево" alt="Усадьба Абрамцево" class="slider-image active" id="slider4-img1">
+                    <img src="https://via.placeholder.com/400x300?text=Музей-заповедник+Бородино" alt="Бородинское поле" class="slider-image" id="slider4-img2">
+                    <img src="https://via.placeholder.com/400x300?text=Жостово+поднос" alt="Жостовский поднос" class="slider-image" id="slider4-img3">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('right2', -1)">❮</button>
+                    <span class="slider-counter" id="right2-counter">1/3</span>
+                    <button class="slider-btn next" onclick="changeImage('right2', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content left-text">
+                <h2>Культурное и историческое наследие</h2>
+                <p>Подмосковье — место, где создавалась русская культура. <strong>Усадьба Абрамцево</strong> стала центром художественного кружка, где работали Васнецов, Врубель, Репин, Серов. <strong>Музей-заповедник «Бородинское поле»</strong> — место знаменитого сражения 1812 года, здесь сохранились батареи, памятники и реконструированные укрепления. <strong>Звенигородский музей-заповедник</strong> хранит древние иконы и археологические находки.</p>
+                <p>Подмосковье — родина народных промыслов: <strong>Гжель</strong> (керамика), <strong>Жостово</strong> (подносы), <strong>Павловский Посад</strong> (платки), <strong>Федоскино</strong> (лаковая миниатюра), <strong>Богородское</strong> (резная деревянная игрушка). В области проходят крупные культурные фестивали: <strong>«Русское поле»</strong> (фестиваль народного творчества), <strong>«Джазовые сезоны»</strong> в Горках Ленинских, <strong>«Мелиховская весна»</strong> (чеховский театральный фестиваль).</p>
+            </div>
+        </div>
+
+        <!-- Пятый блок: кулинарные традиции -->
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="https://via.placeholder.com/400x300?text=Коломенская+пастила" alt="Коломенская пастила" class="slider-image active" id="slider5-img1">
+                    <img src="https://via.placeholder.com/400x300?text=Коломенские+калачи" alt="Коломенские калачи" class="slider-image" id="slider5-img2">
+                    <img src="https://via.placeholder.com/400x300?text=Московский+расстегай" alt="Расстегай подмосковный" class="slider-image" id="slider5-img3">
+                    <img src="https://via.placeholder.com/400x300?text=Серпуховские+пряники" alt="Серпуховские пряники" class="slider-image" id="slider5-img4">
+                    <img src="https://via.placeholder.com/400x300?text=Сбитень+медовый" alt="Сбитень медовый" class="slider-image" id="slider5-img5">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left3', -1)">❮</button>
+                    <span class="slider-counter" id="left3-counter">1/5</span>
+                    <button class="slider-btn next" onclick="changeImage('left3', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>Кулинарные традиции Подмосковья</h2>
+                <p>Подмосковная кухня славится блюдами, которые веками готовили в усадьбах и монастырях. Главный бренд — <strong>коломенская пастила</strong>, которую начали производить в Коломне в XVIII веке. Её делают из яблочного пюре, мёда и яичного белка, без сахара. Сегодня в Коломне работает музей пастилы, где можно попробовать этот десерт по старинным рецептам.</p>
+                <p>Другое знаменитое лакомство — <strong>коломенский калач</strong>, сдобный хлеб в форме замка́ с дужкой. В Коломне есть музей калача, где рассказывают об истории этого блюда. <strong>Серпуховские пряники</strong> — печатные, с начинкой из варенья или сгущёнки, украшенные глазурью. <strong>Звенигородские курники</strong> — многослойные праздничные пироги с курицей и кашей.</p>
+                <p>Традиционные супы: <strong>борщ по-подольски</strong> с грибами и черносливом. Из напитков популярен <strong>сбитень</strong> — горячий медовый напиток с пряностями, который варили в подмосковных трактирах. <strong>Медовуха</strong> из серпуховского мёда и <strong>яблочные наливки</strong> из антоновки, выращенной в подмосковных садах. Всё это — кухня, отражающая историю русской усадебной жизни, гостеприимной и хлебосольной.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const sliders = {
+            left: { current: 0, total: 3 },
+            right: { current: 0, total: 4 },
+            left2: { current: 0, total: 5 },
+            right2: { current: 0, total: 3 },
+            left3: { current: 0, total: 5 }
+        };
+
+        function goBack() {
+            window.history.back();
+        }
+
+        function changeImage(sliderId, direction) {
+            const slider = sliders[sliderId];
+            if (!slider) return;
+
+            const newIndex = slider.current + direction;
+            if (newIndex < 0 || newIndex >= slider.total) return;
+
+            const oldImage = document.querySelector(`#slider${getSliderNumber(sliderId)}-img${slider.current + 1}`);
+            if (oldImage) oldImage.classList.remove('active');
+
+            slider.current = newIndex;
+
+            const newImage = document.querySelector(`#slider${getSliderNumber(sliderId)}-img${slider.current + 1}`);
+            if (newImage) newImage.classList.add('active');
+
+            const counter = document.getElementById(`${sliderId}-counter`);
+            if (counter) {
+                counter.textContent = `${slider.current + 1}/${slider.total}`;
+            }
+        }
+
+        function getSliderNumber(sliderId) {
+            const map = {
+                'left': '1',
+                'right': '2',
+                'left2': '3',
+                'right2': '4',
+                'left3': '5'
+            };
+            return map[sliderId] || '1';
+        }
+    </script>
+</body>
+</html>

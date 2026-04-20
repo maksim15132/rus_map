@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карелия - Край озёр и гранита</title>
+    <link rel="stylesheet" href="../region/Курская область/style_region.css">
+</head>
+<body>
+    <div class="welcome-banner">
+        <img src="../img_logo/karelia.png" alt="Герб Республики Карелия" class="logo">
+        <h1 class="logo_text">Добро пожаловать в Республику Карелия</h1>
+        <button class="back-button" onclick="goBack()">← Назад</button>
+    </div>
+
+    <div class="main-layout">
+        <!-- Первый блок: текст справа, изображения слева (история края) -->
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="../region/Респубика Карелия/karelia1.jpg" alt="Кижи - памятник деревянного зодчества" class="slider-image active" id="slider1-img1">
+                    <img src="../region/Респубика Карелия/karelia2.webp" alt="Валаамский монастырь" class="slider-image" id="slider1-img2">
+                    <img src="../region/Респубика Карелия/karelia3.jpg" alt="Петрозаводск - столица Карелии" class="slider-image" id="slider1-img3">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left', -1)">❮</button>
+                    <span class="slider-counter" id="left-counter">1/3</span>
+                    <button class="slider-btn next" onclick="changeImage('left', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>История Карелии</h2>
+                <p>Республика Карелия — уникальный регион на северо-западе России, который называют "краем озёр и гранита", "голубым оком России" и "музеем под открытым небом". История Карелии насчитывает тысячелетия: первые люди появились здесь после отступления ледника около 7-8 тысяч лет назад. В средние века эти земли входили в состав Новгородской республики, затем были предметом соперничества между Россией и Швецией. В 1940 году была образована Карело-Финская ССР, а в 1991 году — Республика Карелия в составе РФ.</p>
+                <p>Сегодня Республика Карелия — это субъект Российской Федерации, расположенный в северо-западной части страны. В состав региона входят 16 районов, 13 городов, 11 поселков городского типа. Крупнейшие города — Петрозаводск (столица), Кондопога, Костомукша, Сегежа, Сортавала, Медвежьегорск. Карелия славится уникальной природой — здесь насчитывается более 60 тысяч озёр и 27 тысяч рек, а также богатейшим культурным наследием, включающим памятники деревянного зодчества, древние наскальные рисунки и уникальные музыкальные традиции.</p>
+            </div>
+        </div>
+
+        <!-- Второй блок: изображения слева, текст справа (символы и гордость края) -->
+        <div class="content-block reverse">
+            <div class="image-slider right-slider">
+                <div class="slider-container">
+                    <img src="../region/Респубика Карелия/karelia4.webp" alt="Ладожское и Онежское озера" class="slider-image active" id="slider2-img1">
+                    <img src="../region/Респубика Карелия/karelia5.jpg" alt="Карельская береза" class="slider-image" id="slider2-img2">
+                    <img src="../region/Респубика Карелия/karelia6.jpg" alt="Карельские граниты и мраморы" class="slider-image" id="slider2-img3">
+                    <img src="../region/Респубика Карелия/karelia7.webp" alt="Карело-финский эпос Калевала" height="100px" width="100px" class="slider-image" id="slider2-img4">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('right', -1)">❮</button>
+                    <span class="slider-counter" id="right-counter">1/4</span>
+                    <button class="slider-btn next" onclick="changeImage('right', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content left-text">
+                <h2>Символы и гордость Карелии</h2>
+                <p>Карелия славится своими уникальными символами, известными далеко за пределами России. Во-первых, это <strong>карельские озера</strong> — Ладожское и Онежское, крупнейшие пресноводные водоемы Европы. Ладожское озеро — самое большое озеро Европы, а Онежское славится своими живописными берегами и островом Кижи. Во-вторых, это <strong>карельская береза</strong> — редкий вид дерева с уникальным узорчатым рисунком древесины, из которой изготавливают эксклюзивные предметы интерьера и ювелирные украшения.</p>
+                <p>Кроме того, Карелия — это <strong>карельские граниты и мраморы</strong>. Карельский малиновый кварцит украшает Мавзолей Ленина и собор Василия Блаженного в Москве, а мраморы из Рускеалы использовались при строительстве Исаакиевского собора и Эрмитажа. Особое место занимает <strong>карельский эпос "Калевала"</strong> — всемирно известный поэтический сборник карело-финских рун, собранный Элиасом Лённротом. "Калевала" стала национальным достоянием и источником вдохновения для многих художников, композиторов и писателей.</p>
+            </div>
+        </div>
+
+        <!-- Третий блок: текст справа, изображения слева (природные и культурные достопримечательности) -->
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="../region/Респубика Карелия/karelia8.jpg" alt="Музей-заповедник Кижи" class="slider-image active" id="slider3-img1">
+                    <img src="../region/Респубика Карелия/karelia9.webp" alt="Гора Воттоваара - карельский Стоунхендж" class="slider-image" id="slider3-img2">
+                    <img src="../region/Респубика Карелия/karelia10.webp" alt="Рускеальские водопады Ахинкоски" class="slider-image" id="slider3-img3">
+                    <img src="../region/Респубика Карелия/karelia11.jpg" alt="Мраморный каньон Рускеала" class="slider-image" id="slider3-img4">
+                    <img src="../region/Респубика Карелия/karelia12.jpg" alt="Беломорские петроглифы - наскальные рисунки" class="slider-image" id="slider3-img5">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left2', -1)">❮</button>
+                    <span class="slider-counter" id="left2-counter">1/5</span>
+                    <button class="slider-btn next" onclick="changeImage('left2', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>Достопримечательности Карелии</h2>
+                <p>Достопримечательности Карелии поражают своим разнообразием и уникальностью. Центральное место занимает <strong>музей-заповедник "Кижи"</strong> — объект Всемирного наследия ЮНЕСКО, где находится знаменитая Преображенская церковь, построенная без единого гвоздя. Архитектурный ансамбль Кижского погоста — вершина русского деревянного зодчества, привлекающая тысячи туристов со всего мира.</p>
+                <p>Уникальным природным объектом является <strong>гора Воттоваара</strong> — одна из самых загадочных достопримечательностей Карелии, которую называют "карельским Стоунхенджем". Здесь находятся многочисленные сейды (каменные сооружения древних саамов) и причудливые скальные останцы. Особого внимания заслуживает <strong>горный парк "Рускеала"</strong> — мраморный каньон с изумрудной водой, где можно покататься на лодках и прогуляться по подземным штольням. Рядом находятся живописные <strong>Рускеальские водопады Ахинкоски</strong>, где снимались сцены фильма "А зори здесь тихие". Завершают картину <strong>Беломорские петроглифы</strong> — древние наскальные рисунки возрастом более 5 тысяч лет, также входящие в список ЮНЕСКО.</p>
+            </div>
+        </div>
+
+        <!-- Четвертый блок: изображения слева, текст справа (культурное наследие) -->
+        <div class="content-block reverse">
+            <div class="image-slider right-slider">
+                <div class="slider-container">
+                    <img src="../region/Респубика Карелия/karelia13.jpg" alt="Валаамский архипелаг" class="slider-image active" id="slider4-img1">
+                    <img src="../region/Респубика Карелия/karelia14.jpg" alt="Карельская баня по-черному" class="slider-image" id="slider4-img2">
+                    <img src="../region/Респубика Карелия/karelia15.jpg" alt="Карельские руны и кантеле" class="slider-image" id="slider4-img3">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('right2', -1)">❮</button>
+                    <span class="slider-counter" id="right2-counter">1/3</span>
+                    <button class="slider-btn next" onclick="changeImage('right2', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content left-text">
+                <h2>Культурное и духовное наследие</h2>
+                <p>Карелия — уникальный регион, где переплелись православные и языческие традиции, карельская, вепсская и финская культуры. Духовное сердце Карелии — <strong>Валаамский архипелаг</strong> с Валаамским Спасо-Преображенским мужским монастырем. Этот древний монастырь, основанный еще в X-XI веках, веками был центром православия на севере Руси. Уединенные скиты, живописная природа и особая духовная атмосфера привлекают на Валаам тысячи паломников и туристов.</p>
+                <p>Важнейшая часть культурного наследия — <strong>карельский язык и эпос</strong>. Кантеле — национальный карело-финский музыкальный инструмент, струнный щипковый инструмент, похожий на гусли, звучание которого сопровождало исполнение рун. Традиции <strong>карельской бани по-черному</strong> (когда дым выходит через открытую дверь) сохранились в карельских деревнях до наших дней. Сегодня в Карелии возрождаются народные промыслы: резьба по дереву, бересте, керамика, ткачество и вышивка. Ежегодно проводятся этнографические фестивали, такие как "Земля кантеле", "Калевала-фест" и "Голос кочевников", которые привлекают гостей не только из России, но и из-за рубежа.</p>
+            </div>
+        </div>
+
+        <!-- Блок: Кулинарные традиции Карелии -->
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="../region/Респубика Карелия/karelia16.webp" alt="Карельские калитки" class="slider-image active" id="slider5-img1">
+                    <img src="../region/Респубика Карелия/karelia17.webp" alt="Уха по-карельски" class="slider-image" id="slider5-img2">
+                    <img src="../region/Респубика Карелия/karelia18.webp" alt="Карельский рыбник" class="slider-image" id="slider5-img3">
+                    <img src="../region/Респубика Карелия/karelia19.webp"" alt="Карельские пряники козули" class="slider-image" id="slider5-img4">
+                    <img src="../region/Респубика Карелия/karelia20.jpg" alt="Морошка и клюква - карельские ягоды" class="slider-image" id="slider5-img5">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left3', -1)">❮</button>
+                    <span class="slider-counter" id="left3-counter">1/5</span>
+                    <button class="slider-btn next" onclick="changeImage('left3', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>Кулинарные традиции Карелии</h2>
+                <p>Карельская кухня — это простые, сытные и очень вкусные блюда из того, чем богата северная природа. Главное блюдо — <strong>калитки</strong>, открытые ржаные пирожки с начинкой из картофеля, пшённой каши, брусники или творога. Раньше их пекли в каждой карельской семье, подавали к ухе или молоку. Не менее знаменит <strong>карельский рыбник</strong> — закрытый слоеный пирог с рыбой (сиг, ряпушка, корюшка), где сок пропитывает тесто, делая его невероятно сочным.</p>
+                <p>Рыба — основа карельского стола. <strong>Уха по-карельски</strong> варится из свежей рыбы (чаще сёмги или форели) со сливками — очень нежная и наваристая. В деревнях до сих пор готовят <strong>сигу слабосолёную</strong>, <strong>ряпушку копчёную</strong>. Из молока делают <strong>сухой творог</strong> — его сушили в печи, чтобы дольше хранился. Любят карелы грибы: солёные грузди, рыжики, волнушки. Из муки пекут <strong>колобки</strong> — маленькие ржаные лепёшки.</p>
+                <p>Карельские десерты — это северные ягоды: <strong>морошка</strong>, <strong>клюква</strong>, <strong>брусника</strong>, <strong>черника</strong>. Их едят свежими, мочёными, варят из них варенье и морсы. К чаю подают <strong>пряники козули</strong> (с корицей, имбирём, гвоздикой) и <strong>шанежки</strong> — ватрушки с творожной начинкой. Из напитков популярны <strong>брусничный морс</strong>, <strong>хлебный квас</strong>, <strong>кисель из брусники</strong>. Всё это — кухня, рождённая суровой северной природой, но от этого не менее гостеприимная и душевная.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Состояние слайдеров
+        const sliders = {
+            left: { current: 0, total: 3 },
+            right: { current: 0, total: 4 },
+            left2: { current: 0, total: 5 },
+            right2: { current: 0, total: 3 },
+            left3: { current: 0, total: 5 }
+        };
+
+        // Функция возврата на предыдущую страницу
+        function goBack() {
+            window.history.back();
+        }
+
+        // Функция смены изображения
+        function changeImage(sliderId, direction) {
+            const slider = sliders[sliderId];
+            if (!slider) return;
+
+            const newIndex = slider.current + direction;
+            if (newIndex < 0 || newIndex >= slider.total) return;
+
+            const oldImage = document.querySelector(`#slider${getSliderNumber(sliderId)}-img${slider.current + 1}`);
+            if (oldImage) oldImage.classList.remove('active');
+
+            slider.current = newIndex;
+
+            const newImage = document.querySelector(`#slider${getSliderNumber(sliderId)}-img${slider.current + 1}`);
+            if (newImage) newImage.classList.add('active');
+
+            const counter = document.getElementById(`${sliderId}-counter`);
+            if (counter) {
+                counter.textContent = `${slider.current + 1}/${slider.total}`;
+            }
+        }
+
+        function getSliderNumber(sliderId) {
+            const map = {
+                'left': '1',
+                'right': '2',
+                'left2': '3',
+                'right2': '4',
+                'left3': '5'
+            };
+            return map[sliderId] || '1';
+        }
+    </script>
+</body>
+</html>

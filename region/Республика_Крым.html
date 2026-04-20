@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Крым - Жемчужина России</title>
+    <link rel="stylesheet" href="../region/Курская область/style_region.css">
+</head>
+<body>
+    <div class="welcome-banner">
+        <img src="../img_logo/Gerbkrim.png" alt="Герб Республики Крым" class="logo">
+        <h1 class="logo_text">Добро пожаловать в Республику Крым</h1>
+        <button class="back-button" onclick="goBack()">← Назад</button>
+    </div>
+
+    <div class="main-layout">
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="../region/Республика Крым/krim1.jpg" alt="Ласточкино гнездо" class="slider-image active" id="slider1-img1">
+                    <img src="../region/Республика Крым/krim2.webp" alt="Гора Ай-Петри" class="slider-image" id="slider1-img2">
+                    <img src="../region/Республика Крым/krim3.jpg" alt="Херсонес Таврический" class="slider-image" id="slider1-img3">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left', -1)">❮</button>
+                    <span class="slider-counter" id="left-counter">1/3</span>
+                    <button class="slider-btn next" onclick="changeImage('left', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>История Крымского полуострова</h2>
+                <p>Крым — уникальный полуостров, который называют "жемчужиной России". Его история насчитывает тысячелетия: здесь процветали античные города-государства, проходили пути Великого шелкового пути, формировались средневековые княжества. В 1783 году Крым был присоединен к Российской империи, а в 2014 году состоялось историческое воссоединение с Россией.</p>
+                <p>Сегодня Республика Крым — это субъект Российской Федерации, расположенный на одноименном полуострове. Регион включает 14 районов, 16 городов, 56 поселков городского типа. Крупнейшие города — Симферополь (столица), Севастополь (город федерального значения), Керчь, Евпатория, Феодосия, Ялта. Крым славится уникальным сочетанием горных и прибрежных ландшафтов, целебным климатом и богатейшим культурным наследием.</p>
+            </div>
+        </div>
+        <div class="content-block reverse">
+            <div class="image-slider right-slider">
+                <div class="slider-container">
+                    <img src="../region/Республика Крым/krim4.jpg" alt="Виноградники Крыма" class="slider-image active" id="slider2-img1">
+                    <img src="../region/Республика Крым/krim5.jfif" alt="Массандра" class="slider-image" id="slider2-img2">
+                    <img src="../region/Республика Крым/krim6.jpg" alt="Крымские лавандовые поля" class="slider-image" id="slider2-img3">
+                    <img src="../region/Республика Крым/krim7.jpg" alt="Никитский ботанический сад" class="slider-image" id="slider2-img4">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('right', -1)">❮</button>
+                    <span class="slider-counter" id="right-counter">1/4</span>
+                    <button class="slider-btn next" onclick="changeImage('right', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content left-text">
+                <h2>Символы и гордость Крыма</h2>
+                <p>Крым славится на весь мир своими уникальными символами. Во-первых, это <strong>крымские виноградники и вина</strong> — регион является родиной российского виноделия с более чем двухтысячелетней историей. Знаменитые вина "Массандра", "Коктебель", "Новый Свет" известны далеко за пределами полуострова. Во-вторых, это <strong>Ласточкино гнездо</strong> — символ Южного берега Крыма, ставший визитной карточкой региона.</p>
+                <p>Кроме того, Крым — это <strong>Крымский мост</strong> — самое протяженное сооружение в Европе, соединившее полуостров с материковой Россией. Особое место занимают <strong>крымские пляжи</strong> — более 500 километров побережья с разнообразными ландшафтами: от песчаных пляжей Евпатории до галечных бухт Ялты и живописных скал Коктебеля. Завершает список символ <strong>крымская лаванда</strong> — ароматные поля, цветущие в июне-июле и создающие неповторимый южный колорит.</p>
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="../region/Республика Крым/krim8.webp" alt="Воронцовский дворец" class="slider-image active" id="slider3-img1">
+                    <img src="../region/Республика Крым/krim9.jpg" alt="Ливадийский дворец" class="slider-image" id="slider3-img2">
+                    <img src="../region/Республика Крым/krim10.jpg" alt="Ханский дворец Бахчисарай" class="slider-image" id="slider3-img3">
+                    <img src="../region/Республика Крым/krim11.webp" alt="Генуэзская крепость Судак" class="slider-image" id="slider3-img4">
+                    <img src="../region/Республика Крым/krim12.webp" alt="Крымская обсерватория" class="slider-image" id="slider3-img5">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left2', -1)">❮</button>
+                    <span class="slider-counter" id="left2-counter">1/5</span>
+                    <button class="slider-btn next" onclick="changeImage('left2', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>Достопримечательности Крыма</h2>
+                <p>Достопримечательности Крыма поражают своим разнообразием и уникальностью. Центральное место занимают <strong>дворцы Южного берега Крыма</strong>: Воронцовский дворец в Алупке, выполненный в неоготическом стиле; Ливадийский дворец в Ялте — место проведения Ялтинской конференции 1945 года; и живописный Массандровский дворец, напоминающий французский замок.</p>
+                <p>Особого внимания заслуживают исторические памятники древности: <strong>Херсонес Таврический</strong> в Севастополе — античный город, где принял крещение князь Владимир; <strong>Генуэзская крепость</strong> в Судаке — величественное средневековое сооружение; <strong>Ханский дворец</strong> в Бахчисарае — бывшая резиденция крымских ханов. Среди природных достопримечательностей выделяются <strong>гора Ай-Петри</strong> с канатной дорогой, <strong>Большой каньон Крыма</strong> с живописными ущельями и <strong>Крымские пещерные города</strong> — уникальные памятники средневековой архитектуры, высеченные в скалах.</p>
+            </div>
+        </div>
+        <div class="content-block reverse">
+            <div class="image-slider right-slider">
+                <div class="slider-container">
+                    <img src="../region/Республика Крым/krim13.jfif" alt="Дом-музей Чехова в Ялте" class="slider-image active" id="slider4-img1">
+                    <img src="../region/Республика Крым/krim14.webp" alt="Дом-музей Волошина в Коктебеле" class="slider-image" id="slider4-img2">
+                    <img src="../region/Республика Крым/krim15.jfif" alt="Киммерия Волошина" class="slider-image" id="slider4-img3">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('right2', -1)">❮</button>
+                    <span class="slider-counter" id="right2-counter">1/3</span>
+                    <button class="slider-btn next" onclick="changeImage('right2', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content left-text">
+                <h2>Литературное и художественное наследие</h2>
+                <p>Крым на протяжении столетий вдохновлял писателей, поэтов и художников. <strong>Ялта</strong> стала домом для Антона Чехова — здесь находится знаменитая Белая дача, где были написаны "Три сестры" и "Вишневый сад". <strong>Коктебель</strong> — место, где жил и творил поэт Максимилиан Волошин, создавший уникальный Дом поэта, который посещали многие деятели Серебряного века.</p>
+                <p>Земля Крыма связана с именами Александра Пушкина, посетившего полуостров в 1820 году, Льва Толстого, участвовавшего в обороне Севастополя, Александра Грина, создававшего свои феерии в Феодосии. Художники Иван Айвазовский и Архип Куинджи находили здесь вдохновение для своих морских пейзажей. Сегодня Крым остается притягательным местом для творческих людей, которые приезжают на пленэры, литературные фестивали и в поисках вдохновения, которое дарит уникальная природа полуострова.</p>
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="image-slider left-slider">
+                <div class="slider-container">
+                    <img src="../region/Республика Крым/krim16.webp" alt="Крымские чебуреки чир-чир" class="slider-image active" id="slider5-img1">
+                    <img src="../region/Республика Крым/krim17.jpg" alt="Янтык - чебурек на сухой сковороде" class="slider-image" id="slider5-img2">
+                    <img src="../region/Республика Крым/krim18.jpg" alt="Лахмаджун - крымская пицца" class="slider-image" id="slider5-img3">
+                    <img src="../region/Республика Крым/krim19.jpg" alt="Шурпа - наваристый суп" class="slider-image" id="slider5-img4">
+                    <img src="../region/Республика Крым/krim20.jpg" alt="Крымская пахлава" class="slider-image" id="slider5-img5">
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="changeImage('left3', -1)">❮</button>
+                    <span class="slider-counter" id="left3-counter">1/5</span>
+                    <button class="slider-btn next" onclick="changeImage('left3', 1)">❯</button>
+                </div>
+            </div>
+            <div class="text-content right-text">
+                <h2>Кулинарные традиции Крыма</h2>
+                <p>Крымская кухня — это уникальный сплав традиций крымских татар, греков, армян, караимов и русских. Визитная карточка полуострова — <strong>чебуреки (чир-чир)</strong>. Тонкое хрустящее тесто и сочная начинка из бараньего или говяжьего фарша с луком и специями делают это блюдо легендарным. <strong>Янтык</strong> — тот же чебурек, но жареный на сухой сковороде без масла, более диетический вариант. В отличие от чебурека, янтык не имеет пузырей и получается плоским.</p>
+                <p>Среди крымско-татарских блюд особое место занимает <strong>лахмаджун</strong> — тонкая круглая лепёшка из дрожжевого теста с мясным фаршем, помидорами, сладким перцем, чесноком и зеленью. Его называют «крымской пиццей». Традиционный суп — <strong>шурпа</strong> на бараньем бульоне с большим количеством овощей (картофель, морковь, лук, перец) и свежей зеленью. На первое также подают <strong>бешбармак</strong> — отварное мясо с крупной лапшой и луком.</p>
+                <p>Крымские десерты и выпечка: <strong>пахлава</strong> — многослойная, с орехами (грецкими или фундуком) и медовым сиропом; <strong>курабье</strong> — рассыпчатое песочное печенье; <strong>шекерамет</strong> — открытый пирог с орехово-сливочной начинкой. <strong>Губадия</strong> — сладкий слоеный пирог с творогом, изюмом, курагой и орехами. Напитки: кофе по-восточному, травяной чай с чабрецом, душицей и зверобоем, а также <strong>айран</strong> — освежающий кисломолочный напиток. Из заготовок славятся солёные помидоры с виноградными листьями, маринованный чеснок. Всё это богатство отражает многовековую историю и гостеприимство крымской земли.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Состояние слайдеров
+       const sliders = {
+            left: { current: 0, total: 3 },
+            right: { current: 0, total: 4 },
+            left2: { current: 0, total: 5 },
+            right2: { current: 0, total: 3 },
+            left3: { current: 0, total: 5 }  
+        };
+        
+
+        // Функция возврата на предыдущую страницу
+        function goBack() {
+            window.history.back();
+        }
+
+        // Функция смены изображения
+        function changeImage(sliderId, direction) {
+            const slider = sliders[sliderId];
+            if (!slider) return;
+
+            const newIndex = slider.current + direction;
+            if (newIndex < 0 || newIndex >= slider.total) return;
+
+            // Скрываем текущее изображение
+            const oldImage = document.querySelector(`#slider${getSliderNumber(sliderId)}-img${slider.current + 1}`);
+            if (oldImage) oldImage.classList.remove('active');
+
+            // Обновляем индекс
+            slider.current = newIndex;
+
+            // Показываем новое изображение
+            const newImage = document.querySelector(`#slider${getSliderNumber(sliderId)}-img${slider.current + 1}`);
+            if (newImage) newImage.classList.add('active');
+
+            // Обновляем счетчик
+            const counter = document.getElementById(`${sliderId}-counter`);
+            if (counter) {
+                counter.textContent = `${slider.current + 1}/${slider.total}`;
+            }
+        }
+
+       function getSliderNumber(sliderId) {
+    const map = {
+        'left': '1',
+        'right': '2',
+        'left2': '3',
+        'right2': '4',
+        'left3': '5'
+    };
+    return map[sliderId] || '1';
+}
+    </script>
+</body>
+</html>
