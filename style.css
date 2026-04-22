@@ -70,7 +70,7 @@ body {
     padding: 10px 15px;
     color: #ffd966;
     font-size: 0.9rem;
-    width: 220px;
+    width: 100%;
     outline: none;
 }
 
@@ -439,6 +439,14 @@ body {
     }
     .quote-section p {
         font-size: 0.9rem;
+    }
+    .search-input{
+        width: 100%;
+    }
+    .logo-area{
+        align-items: center;
+        justify-content: center;
+        display: flex;
     }
 }
 ::-webkit-scrollbar {
